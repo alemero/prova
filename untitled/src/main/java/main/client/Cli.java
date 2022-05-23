@@ -1,6 +1,6 @@
 package main.client;
 
-import it.polimi.ingsw.model.*;
+import main.model.*;
 
 import java.util.*;
 import java.util.List;

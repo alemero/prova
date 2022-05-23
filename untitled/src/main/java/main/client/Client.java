@@ -1,6 +1,6 @@
 package main.client;
 
-import it.polimi.ingsw.model.*;
+import main.model.*;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -249,7 +249,7 @@ public class Client{
                         Land land=(Land) in.readObject();
                         for (Land e: match.getLands()) {
                             if(e.getID()==land.getID())
-                                e.changeTower(towers.get(0));
+                                e.changeTower(towers);
                         }
                         view.printMatch(match);
                         server.sendACK();

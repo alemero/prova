@@ -1,14 +1,14 @@
 package main.client;
 
-import it.polimi.ingsw.model.AssistantCard;
-import it.polimi.ingsw.model.Student;
-import it.polimi.ingsw.model.Wizards;
+import main.model.AssistantCard;
+import main.model.Student;
+import main.model.Wizards;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-import it.polimi.ingsw.model.*;
+import main.model.*;
 
 /**
  * This class contains all the possible message to send to the sever
