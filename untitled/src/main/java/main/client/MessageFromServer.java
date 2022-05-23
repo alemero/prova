@@ -1,8 +1,6 @@
 package main.client;
 
-import it.polimi.ingsw.model.*;
-import it.polimi.ingsw.serverController.Action;
-import it.polimi.ingsw.serverController.ClientHandler;
+import main.model.*;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

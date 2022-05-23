@@ -1,7 +1,8 @@
 package main.client;
 
-import it.polimi.ingsw.model.*;
+import main.model.*;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -49,10 +50,12 @@ public class Action {
                 nuovo=match.getPlayer()[j];
             }
         }
+        ArrayList<Tower> t=new ArrayList<>();
         if(owner==null){
-            match.getMotherNature().getPosition().changeTower(nuovo.getBoard().removeTower());
+            t.add(nuovo.getBoard().removeTower());
+            match.getMotherNature().getPosition().changeTower(t);
         }else if(influenze.get(owner)!=influenze.get(nuovo)){
-            match.getMotherNature().getPosition().changeTower(nuovo.getBoard().removeTower());
+            match.getMotherNature().getPosition().changeTower(t);
         }
 
     }
