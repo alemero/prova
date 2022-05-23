@@ -14,7 +14,7 @@
          </font>
       </Label>
       <TextField layoutX="196.0" layoutY="184.0" prefHeight="31.0" prefWidth="208.0" />
-      <Button layoutX="273.0" layoutY="275.0" mnemonicParsing="false" text="Submit" />
+      <Button layoutX="273.0" layoutY="275.0" mnemonicParsing="false" text="Invia" />
       <Label fx:id="result_username" layoutX="199.0" layoutY="230.0" opacity="0.0" text="Username errato.. Riprova" />
    </children>
 </AnchorPane>
