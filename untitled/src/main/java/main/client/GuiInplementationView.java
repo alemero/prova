@@ -7,6 +7,7 @@ import java.util.List;
 public class GuiInplementationView implements View {
     @Override
     public String getUsername() {
+
         return null;
     }
 
