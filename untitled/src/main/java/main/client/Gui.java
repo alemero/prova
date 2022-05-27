@@ -1,8 +1,11 @@
 package main.client;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 import main.model.*;
 
+import java.io.IOException;
 import java.util.List;
 
 public class Gui implements View {
@@ -15,6 +18,13 @@ public class Gui implements View {
 
     @Override
     public String getUsername() {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("login_page.fxml"));
+        try {
+            stage.setScene(new Scene(fxmlLoader.load()));
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+        stage.show();
         return null;
     }
 
@@ -106,6 +116,21 @@ public class Gui implements View {
     @Override
     public void setClouds(List<Cloud> clouds) {
 
+    }
+
+    @Override
+    public String chooseMatch(List<String> join, List<String> resume) {
+        return null;
+    }
+
+    @Override
+    public void setNack() {
+
+    }
+
+    @Override
+    public String chooseLogin() {
+        return null;
     }
 
     @Override
