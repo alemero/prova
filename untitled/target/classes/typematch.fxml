@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:controller="main.MainController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="202.0" layoutY="49.0" prefHeight="35.0" prefWidth="195.0" text="scegli il tipo di partita">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="playernum" layoutX="225.0" layoutY="143.0" prefWidth="150.0"/>
+      <Label layoutX="246.0" layoutY="107.0" text="numero giocatori">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="225.0" layoutY="190.0" prefHeight="20.0" prefWidth="115.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="expert" layoutX="242.0" layoutY="191.0" mnemonicParsing="false" text="modalità esperto">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </CheckBox>
+      <Button fx:id="typematch" layoutX="280.0" layoutY="231.0" mnemonicParsing="false" onAction="#choosetypematch" prefHeight="26.0" prefWidth="54.0" text="ok" />
+   </children>
+</AnchorPane>

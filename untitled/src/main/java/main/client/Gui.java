@@ -30,6 +30,13 @@ public class Gui implements View {
 
     @Override
     public Wizards getWizard(List<Wizards> wizards) {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("chooseWizard.fxml"));
+        try {
+            stage.setScene(new Scene(fxmlLoader.load()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        stage.show();
         return null;
     }
 
@@ -120,6 +127,15 @@ public class Gui implements View {
 
     @Override
     public String chooseMatch(List<String> join, List<String> resume) {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("selection_game.fxml"));
+        Scene scene=null;
+        try {
+            scene=fxmlLoader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        stage.setScene(scene);
+        stage.show();
         return null;
     }
 
