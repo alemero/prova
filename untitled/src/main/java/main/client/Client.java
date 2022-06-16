@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-public class Client{
+public class Client extends Thread{
 
     public void run(){
         Socket socket;
@@ -68,7 +68,6 @@ public class Client{
             socket= new Socket(ip.getHostAddress(),port);
             out = new ObjectOutputStream(socket.getOutputStream());
             in= new ObjectInputStream(socket.getInputStream());
-            out.writeObject("Prova prova 1 2 3");
             server=new Message4Server(in,out);
             view = new Cli(server);
             received="base1";

@@ -5,4 +5,6 @@ module main {
 
     opens main to javafx.fxml;
     exports main;
+    exports main.client;
+    opens main.client to javafx.fxml;
 }

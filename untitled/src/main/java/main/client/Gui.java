@@ -1,14 +1,17 @@
 package main.client;
 
+import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import main.MainController;
 import main.model.*;
+
 
 import java.io.IOException;
 import java.util.List;
 
-public class Gui implements View {
+public class Gui extends Application implements View {
     Stage stage;
 
     public Gui(Stage stage) {
@@ -92,7 +95,13 @@ public class Gui implements View {
 
     @Override
     public void getTitolo() {
-
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("titolo.fxml"));
+        try {
+            stage.setScene(new Scene(fxmlLoader.load()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        stage.show();
     }
 
     @Override
@@ -152,5 +161,23 @@ public class Gui implements View {
     @Override
     public void run() {
 
+    }
+
+
+    @Override
+    public void start(Stage stage) throws IOException {
+        View gui=new Gui(stage);
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("prima_app.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("Eriantys");
+        MainController.setGui(gui);
+        stage.setScene(scene);
+        stage.sizeToScene();
+        stage.show();
+        MainController a=new MainController();
+    }
+
+    public static void main(String[] args) {
+        launch(args);
     }
 }

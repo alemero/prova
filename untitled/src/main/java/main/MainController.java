@@ -21,7 +21,7 @@ import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainController {
+public class MainController{
 
     Boolean newPlayer=false;
     static View gui;
@@ -203,4 +203,5 @@ public class MainController {
             e.printStackTrace();
         }
     }
+
 }
