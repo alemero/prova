@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MatchController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #87cefa;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MatchController">
    <children>
       <AnchorPane layoutX="186.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="279.0">
          <children>
@@ -31,7 +31,7 @@
                   <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="mn1" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mn1" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
                </image>
@@ -71,6 +71,11 @@
                   <Image url="@wooden_pieces/wooden_pieces/deny_island_icon.png" />
                </image>
             </ImageView>
+            <Label fx:id="size1" layoutX="124.0" layoutY="-4.0" prefHeight="29.0" prefWidth="33.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="600.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="251.0">
@@ -95,7 +100,7 @@
                   <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="mn3" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mn3" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
                </image>
@@ -135,6 +140,11 @@
                   <Image url="@wooden_pieces/wooden_pieces/deny_island_icon.png" />
                </image>
             </ImageView>
+            <Label fx:id="size3" layoutX="123.0" layoutY="1.0" prefHeight="29.0" prefWidth="33.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="400.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="262.0">
@@ -159,7 +169,7 @@
                   <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="mn2" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mn2" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
                </image>
@@ -199,6 +209,11 @@
                   <Image url="@wooden_pieces/wooden_pieces/deny_island_icon.png" />
                </image>
             </ImageView>
+            <Label fx:id="size2" layoutX="120.0" layoutY="-5.0" prefHeight="29.0" prefWidth="33.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="180.0" layoutY="501.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
@@ -223,7 +238,7 @@
                   <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="mn9" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mn9" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
                </image>
@@ -263,6 +278,11 @@
                   <Image url="@wooden_pieces/wooden_pieces/deny_island_icon.png" />
                </image>
             </ImageView>
+            <Label fx:id="size9" layoutX="124.0" prefHeight="29.0" prefWidth="33.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="589.0" layoutY="501.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="262.0">
@@ -287,7 +307,7 @@
                   <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
                </image>
@@ -327,6 +347,11 @@
                   <Image url="@wooden_pieces/wooden_pieces/deny_island_icon.png" />
                </image>
             </ImageView>
+            <Label fx:id="size7" layoutX="117.0" layoutY="2.0" prefHeight="29.0" prefWidth="33.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="-21.0" layoutY="441.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
@@ -351,7 +376,7 @@
                   <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="mn10" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mn10" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="75.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
                </image>
@@ -391,6 +416,11 @@
                   <Image url="@wooden_pieces/wooden_pieces/deny_island_icon.png" />
                </image>
             </ImageView>
+            <Label fx:id="size10" layoutX="51.0" layoutY="24.0" prefHeight="29.0" prefWidth="33.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="-37.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
@@ -415,7 +445,7 @@
                   <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="mn11" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mn11" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
                </image>
@@ -455,11 +485,16 @@
                   <Image url="@wooden_pieces/wooden_pieces/deny_island_icon.png" />
                </image>
             </ImageView>
+            <Label fx:id="size11" layoutX="43.0" layoutY="25.0" prefHeight="29.0" prefWidth="33.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="-13.0" layoutY="71.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
          <children>
-            <ImageView fx:id="island0" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="island0" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="10.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@wooden_pieces/wooden_pieces/island1.png" />
                </image>
@@ -479,7 +514,7 @@
                   <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="mn0" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mn0" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
                </image>
@@ -519,6 +554,11 @@
                   <Image url="@wooden_pieces/wooden_pieces/deny_island_icon.png" />
                </image>
             </ImageView>
+            <Label fx:id="size0" layoutX="129.0" layoutY="-1.0" prefHeight="29.0" prefWidth="33.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="800.0" layoutY="85.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
@@ -543,7 +583,7 @@
                   <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="mn4" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mn4" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
                </image>
@@ -583,6 +623,11 @@
                   <Image url="@wooden_pieces/wooden_pieces/deny_island_icon.png" />
                </image>
             </ImageView>
+            <Label fx:id="size4" layoutX="42.0" layoutY="149.0" prefHeight="29.0" prefWidth="33.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="790.0" layoutY="430.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
@@ -607,7 +652,7 @@
                   <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="mn6" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mn6" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
                </image>
@@ -647,6 +692,11 @@
                   <Image url="@wooden_pieces/wooden_pieces/deny_island_icon.png" />
                </image>
             </ImageView>
+            <Label fx:id="size6" layoutX="50.0" layoutY="42.0" prefHeight="29.0" prefWidth="33.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="821.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
@@ -671,7 +721,7 @@
                   <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="mn5" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mn5" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
                </image>
@@ -711,6 +761,11 @@
                   <Image url="@wooden_pieces/wooden_pieces/deny_island_icon.png" />
                </image>
             </ImageView>
+            <Label fx:id="size5" layoutX="120.0" layoutY="8.0" prefHeight="29.0" prefWidth="33.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="385.0" layoutY="501.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
@@ -735,7 +790,7 @@
                   <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="mn8" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="mn8" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
                </image>
@@ -775,11 +830,16 @@
                   <Image url="@wooden_pieces/wooden_pieces/deny_island_icon.png" />
                </image>
             </ImageView>
+            <Label fx:id="size8" layoutX="129.0" layoutY="-1.0" prefHeight="29.0" prefWidth="33.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="cloud0" layoutX="288.0" layoutY="238.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="171.0" prefWidth="197.0">
+      <AnchorPane layoutX="288.0" layoutY="238.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="171.0" prefWidth="197.0">
          <children>
-            <ImageView fitHeight="136.0" fitWidth="127.0" layoutX="40.0" layoutY="14.0" onMouseClicked="#choose_cloud" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="cloud0" fitHeight="136.0" fitWidth="127.0" layoutX="40.0" layoutY="14.0" onMouseClicked="#choose_cloud" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@wooden_pieces/wooden_pieces/cloud_card.png" />
                </image>
@@ -806,9 +866,9 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="cloud3" layoutX="414.0" layoutY="336.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="171.0" prefWidth="221.0">
+      <AnchorPane layoutX="414.0" layoutY="336.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="171.0" prefWidth="221.0">
          <children>
-            <ImageView fitHeight="119.0" fitWidth="120.0" layoutX="51.0" layoutY="26.0" onMouseClicked="#choose_cloud" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="cloud2" fitHeight="119.0" fitWidth="120.0" layoutX="51.0" layoutY="26.0" onMouseClicked="#choose_cloud" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@wooden_pieces/wooden_pieces/cloud_card.png" />
                </image>

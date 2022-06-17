@@ -201,7 +201,7 @@ public class Cli implements View,Runnable{
                     case ("ChooseCard"):
                         AssistantCard a;
                         a = this.getAssistantCard(cards);
-                        me.draw(a.getValue());
+                        me.draw(a);
                         do {
                             server.sendChosenCard(a);
                             synchronized (this) {

@@ -14,7 +14,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         View gui=new Gui(stage);
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("prima_app.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("prova.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Eriantys");
         MainController.setGui(gui);

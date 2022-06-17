@@ -177,7 +177,7 @@ public class Client extends Thread{
                         Player pl2=(Player) in.readObject();
                         for (int i = 0; i < match.getPlayer().length; i++) {
                             if(match.getPlayer()[i].getUserName().equals(pl2.getUserName())){
-                                match.getPlayer()[i].draw(card.getValue());
+                                match.getPlayer()[i].draw(card);
                             }
                         }
                         server.sendACK();
