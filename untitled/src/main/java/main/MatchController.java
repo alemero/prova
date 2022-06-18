@@ -4,7 +4,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import main.client.Action;
 import main.client.Message4Server;
@@ -209,7 +208,6 @@ public class MatchController {
                         server.sendStepsMN(step);
                     }
                 }
-                selectedmn=false;
             }else if(selectedstudent){
                 server.sendMovedStudent(assistantchoosen,idland);
                 if(idland==12){
@@ -226,23 +224,25 @@ public class MatchController {
                 }
             }
         }
+        selectedstudent=false;
+        selectedmn=false;
     }
 
 
     public void choose_cloud(MouseEvent mouseEvent) {
-        switch (((ImageView)mouseEvent.getSource()).getId()){
-            case "cloud0":
-                action.chooseCloud(me,match.getCloud()[0]);
+        switch (((ImageView) mouseEvent.getSource()).getId()) {
+            case "cloud0" -> {
+                action.chooseCloud(me, match.getCloud()[0]);
                 server.sendChoiceCloud(match.getCloud()[0]);
-                break;
-            case "cloud1":
-                action.chooseCloud(me,match.getCloud()[1]);
+            }
+            case "cloud1" -> {
+                action.chooseCloud(me, match.getCloud()[1]);
                 server.sendChoiceCloud(match.getCloud()[1]);
-                break;
-            case "cloud2":
-                action.chooseCloud(me,match.getCloud()[2]);
+            }
+            case "cloud2" -> {
+                action.chooseCloud(me, match.getCloud()[2]);
                 server.sendChoiceCloud(match.getCloud()[2]);
-                break;
+            }
         }
     }
 
@@ -367,97 +367,37 @@ public class MatchController {
 
 
     public void selectfromentry(MouseEvent mouseEvent) {
-        switch (((ImageView)mouseEvent.getSource()).getId()){
-            case "entry00":
-                selected(0,0);
-                break;
-            case "entry01":
-                selected(0,1);
-                break;
-            case "entry02":
-                selected(0,2);
-                break;
-            case "entry03":
-                selected(0,3);
-                break;
-            case "entry04":
-                selected(0,4);
-                break;
-            case "entry05":
-                selected(0,5);
-                break;
-            case "entry06":
-                selected(0,6);
-                break;
-            case "entry07":
-                selected(0,7);
-                break;
-            case "entry08":
-                selected(0,8);
-                break;
-            case "entry09":
-                selected(0,9);
-                break;
-            case "entry10":
-                selected(1,0);
-                break;
-            case "entry11":
-                selected(1,1);
-                break;
-            case "entry12":
-                selected(1,2);
-                break;
-            case "entry13":
-                selected(1,3);
-                break;
-            case "entry14":
-                selected(1,4);
-                break;
-            case "entry15":
-                selected(1,5);
-                break;
-            case "entry16":
-                selected(1,6);
-                break;
-            case "entry17":
-                selected(1,7);
-                break;
-            case "entry18":
-                selected(1,8);
-                break;
-            case "entry19":
-                selected(1,9);
-                break;
-            case "entry20":
-                selected(2,0);
-                break;
-            case "entry21":
-                selected(2,1);
-                break;
-            case "entry22":
-                selected(2,2);
-                break;
-            case "entry23":
-                selected(2,3);
-                break;
-            case "entry24":
-                selected(2,4);
-                break;
-            case "entry25":
-                selected(2,5);
-                break;
-            case "entry26":
-                selected(2,6);
-                break;
-            case "entry27":
-                selected(2,7);
-                break;
-            case "entry28":
-                selected(2,8);
-                break;
-            case "entry29":
-                selected(2,9);
-                break;
+        switch (((ImageView) mouseEvent.getSource()).getId()) {
+            case "entry00" -> selected(0, 0);
+            case "entry01" -> selected(0, 1);
+            case "entry02" -> selected(0, 2);
+            case "entry03" -> selected(0, 3);
+            case "entry04" -> selected(0, 4);
+            case "entry05" -> selected(0, 5);
+            case "entry06" -> selected(0, 6);
+            case "entry07" -> selected(0, 7);
+            case "entry08" -> selected(0, 8);
+            case "entry09" -> selected(0, 9);
+            case "entry10" -> selected(1, 0);
+            case "entry11" -> selected(1, 1);
+            case "entry12" -> selected(1, 2);
+            case "entry13" -> selected(1, 3);
+            case "entry14" -> selected(1, 4);
+            case "entry15" -> selected(1, 5);
+            case "entry16" -> selected(1, 6);
+            case "entry17" -> selected(1, 7);
+            case "entry18" -> selected(1, 8);
+            case "entry19" -> selected(1, 9);
+            case "entry20" -> selected(2, 0);
+            case "entry21" -> selected(2, 1);
+            case "entry22" -> selected(2, 2);
+            case "entry23" -> selected(2, 3);
+            case "entry24" -> selected(2, 4);
+            case "entry25" -> selected(2, 5);
+            case "entry26" -> selected(2, 6);
+            case "entry27" -> selected(2, 7);
+            case "entry28" -> selected(2, 8);
+            case "entry29" -> selected(2, 9);
         }
 
     }

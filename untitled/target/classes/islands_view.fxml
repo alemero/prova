@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #87cefa;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MatchController">
+   <children>
+      <AnchorPane layoutX="186.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="279.0">
+         <children>
+            <ImageView fx:id="island1" fitHeight="205.0" fitWidth="227.0" layoutX="24.0" layoutY="2.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/island1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="white1" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/white_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="grey1" fitHeight="80.0" fitWidth="70.0" layoutX="67.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/grey_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="black1" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="mn1" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_red.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="red1" layoutX="244.0" layoutY="39.0" prefHeight="18.0" prefWidth="59.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_blue.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="blue1" layoutX="244.0" layoutY="76.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_green.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="green1" layoutX="244.0" layoutY="110.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_pink.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="pink1" layoutX="244.0" layoutY="146.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_yellow.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="yellow1" layoutX="244.0" layoutY="184.0" text=":0" />
+            <ImageView fitHeight="51.0" fitWidth="59.0" layoutX="42.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/deny_island_icon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="size1" layoutX="124.0" layoutY="-4.0" prefHeight="29.0" prefWidth="33.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="600.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="251.0">
+         <children>
+            <ImageView fx:id="island3" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="10.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/island1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="white3" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/white_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="grey3" fitHeight="80.0" fitWidth="70.0" layoutX="67.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/grey_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="blank3" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="mn3" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_red.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="red3" layoutX="244.0" layoutY="39.0" prefHeight="18.0" prefWidth="59.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_blue.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="blue3" layoutX="244.0" layoutY="76.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_green.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="green3" layoutX="244.0" layoutY="110.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_pink.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="pink3" layoutX="244.0" layoutY="146.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_yellow.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="yellow3" layoutX="244.0" layoutY="184.0" text=":0" />
+            <ImageView fitHeight="51.0" fitWidth="59.0" layoutX="42.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/deny_island_icon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="size3" layoutX="123.0" layoutY="1.0" prefHeight="29.0" prefWidth="33.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="400.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="262.0">
+         <children>
+            <ImageView fx:id="island2" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="10.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/island1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="white2" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/white_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="grey2" fitHeight="80.0" fitWidth="70.0" layoutX="67.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/grey_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="black2" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="mn2" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_red.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="red2" layoutX="244.0" layoutY="39.0" prefHeight="18.0" prefWidth="59.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_blue.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="blue2" layoutX="244.0" layoutY="76.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_green.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="green2" layoutX="244.0" layoutY="110.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_pink.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="pink2" layoutX="244.0" layoutY="146.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_yellow.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="yellow2" layoutX="244.0" layoutY="184.0" text=":0" />
+            <ImageView fitHeight="51.0" fitWidth="59.0" layoutX="42.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/deny_island_icon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="size2" layoutX="120.0" layoutY="-5.0" prefHeight="29.0" prefWidth="33.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="180.0" layoutY="501.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
+         <children>
+            <ImageView fx:id="island9" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="10.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/island1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="white9" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/white_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="grey9" fitHeight="80.0" fitWidth="70.0" layoutX="67.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/grey_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="black9" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="mn9" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_red.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="red9" layoutX="244.0" layoutY="39.0" prefHeight="18.0" prefWidth="59.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_blue.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="blue9" layoutX="244.0" layoutY="76.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_green.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="green9" layoutX="244.0" layoutY="110.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_pink.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="pink9" layoutX="244.0" layoutY="146.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_yellow.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="yellow9" layoutX="244.0" layoutY="184.0" text=":0" />
+            <ImageView fitHeight="51.0" fitWidth="59.0" layoutX="42.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/deny_island_icon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="size9" layoutX="124.0" prefHeight="29.0" prefWidth="33.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="589.0" layoutY="501.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="262.0">
+         <children>
+            <ImageView fx:id="island7" fitHeight="205.0" fitWidth="227.0" layoutX="24.0" layoutY="11.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/island1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="white7" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/white_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="grey7" fitHeight="80.0" fitWidth="70.0" layoutX="67.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/grey_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="black7" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_red.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="red7" layoutX="244.0" layoutY="39.0" prefHeight="18.0" prefWidth="59.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_blue.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="blue7" layoutX="244.0" layoutY="76.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_green.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="green7" layoutX="244.0" layoutY="110.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_pink.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="pink7" layoutX="244.0" layoutY="146.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_yellow.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="yellow7" layoutX="244.0" layoutY="184.0" text=":0" />
+            <ImageView fitHeight="51.0" fitWidth="59.0" layoutX="42.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/deny_island_icon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="size7" layoutX="117.0" layoutY="2.0" prefHeight="29.0" prefWidth="33.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-21.0" layoutY="441.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
+         <children>
+            <ImageView fx:id="island10" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="7.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/island1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="white10" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/white_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="grey10" fitHeight="80.0" fitWidth="70.0" layoutX="67.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/grey_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="black10" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="mn10" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="75.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_red.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="red10" layoutX="244.0" layoutY="39.0" prefHeight="18.0" prefWidth="59.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_blue.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="blue10" layoutX="244.0" layoutY="76.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_green.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="green10" layoutX="244.0" layoutY="110.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_pink.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="pink10" layoutX="244.0" layoutY="146.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_yellow.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="yellow10" layoutX="244.0" layoutY="184.0" text=":0" />
+            <ImageView fitHeight="51.0" fitWidth="59.0" layoutX="42.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/deny_island_icon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="size10" layoutX="51.0" layoutY="24.0" prefHeight="29.0" prefWidth="33.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-37.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
+         <children>
+            <ImageView fx:id="island11" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="10.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/island1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="white11" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/white_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="grey11" fitHeight="80.0" fitWidth="70.0" layoutX="67.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/grey_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="black11" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="mn11" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_red.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="red11" layoutX="244.0" layoutY="39.0" prefHeight="18.0" prefWidth="59.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_blue.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="blue11" layoutX="244.0" layoutY="76.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_green.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="green11" layoutX="244.0" layoutY="110.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_pink.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="pink11" layoutX="244.0" layoutY="146.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_yellow.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="yellow11" layoutX="244.0" layoutY="184.0" text=":0" />
+            <ImageView fitHeight="51.0" fitWidth="59.0" layoutX="42.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/deny_island_icon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="size11" layoutX="43.0" layoutY="25.0" prefHeight="29.0" prefWidth="33.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="-13.0" layoutY="71.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
+         <children>
+            <ImageView fx:id="island0" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="10.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/island1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="white0" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/white_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="grey0" fitHeight="80.0" fitWidth="70.0" layoutX="67.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/grey_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="black0" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="mn0" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_red.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="red0" layoutX="244.0" layoutY="39.0" prefHeight="18.0" prefWidth="59.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_blue.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="blue0" layoutX="244.0" layoutY="76.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_green.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="green0" layoutX="244.0" layoutY="110.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_pink.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="pink0" layoutX="244.0" layoutY="146.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_yellow.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="yellow0" layoutX="244.0" layoutY="184.0" text=":0" />
+            <ImageView fitHeight="51.0" fitWidth="59.0" layoutX="42.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/deny_island_icon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="size0" layoutX="129.0" layoutY="-1.0" prefHeight="29.0" prefWidth="33.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="800.0" layoutY="85.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
+         <children>
+            <ImageView fx:id="island4" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="10.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/island1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="white4" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/white_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="grey4" fitHeight="80.0" fitWidth="70.0" layoutX="67.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/grey_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="black4" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="mn4" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_red.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="red4" layoutX="244.0" layoutY="39.0" prefHeight="18.0" prefWidth="59.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_blue.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="blue4" layoutX="244.0" layoutY="76.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_green.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="green4" layoutX="244.0" layoutY="110.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_pink.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="pink4" layoutX="244.0" layoutY="146.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_yellow.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="yellow4" layoutX="244.0" layoutY="184.0" text=":0" />
+            <ImageView fitHeight="51.0" fitWidth="59.0" layoutX="42.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/deny_island_icon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="size4" layoutX="42.0" layoutY="149.0" prefHeight="29.0" prefWidth="33.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="790.0" layoutY="430.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
+         <children>
+            <ImageView fx:id="island6" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="10.0" onMouseDragged="#moveto" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/island1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="white6" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/white_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="grey6" fitHeight="80.0" fitWidth="70.0" layoutX="67.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/grey_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="black6" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="mn6" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_red.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="red6" layoutX="244.0" layoutY="39.0" prefHeight="18.0" prefWidth="59.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_blue.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="blue6" layoutX="244.0" layoutY="76.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_green.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="green6" layoutX="244.0" layoutY="110.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_pink.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="pink6" layoutX="244.0" layoutY="146.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_yellow.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="yellow6" layoutX="244.0" layoutY="184.0" text=":0" />
+            <ImageView fitHeight="51.0" fitWidth="59.0" layoutX="42.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/deny_island_icon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="size6" layoutX="50.0" layoutY="42.0" prefHeight="29.0" prefWidth="33.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="821.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
+         <children>
+            <ImageView fx:id="island5" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="8.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/island1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="white5" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/white_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="grey5" fitHeight="80.0" fitWidth="70.0" layoutX="67.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/grey_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="black5" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="mn5" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_red.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="red5" layoutX="244.0" layoutY="39.0" prefHeight="18.0" prefWidth="59.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_blue.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="blue5" layoutX="244.0" layoutY="76.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_green.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="green5" layoutX="244.0" layoutY="110.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_pink.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="pink5" layoutX="244.0" layoutY="146.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_yellow.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="yellow5" layoutX="244.0" layoutY="184.0" text=":0" />
+            <ImageView fitHeight="51.0" fitWidth="59.0" layoutX="42.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/deny_island_icon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="size5" layoutX="120.0" layoutY="8.0" prefHeight="29.0" prefWidth="33.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="385.0" layoutY="501.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
+         <children>
+            <ImageView fx:id="island8" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="10.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/island1.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="white8" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/white_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="grey8" fitHeight="80.0" fitWidth="70.0" layoutX="67.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/grey_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="black8" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="mn8" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_red.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="red8" layoutX="244.0" layoutY="39.0" prefHeight="18.0" prefWidth="59.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_blue.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="blue8" layoutX="244.0" layoutY="76.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_green.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="green8" layoutX="244.0" layoutY="110.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_pink.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="pink8" layoutX="244.0" layoutY="146.0" text=":0" />
+            <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_yellow.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="yellow8" layoutX="244.0" layoutY="184.0" text=":0" />
+            <ImageView fitHeight="51.0" fitWidth="59.0" layoutX="42.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/deny_island_icon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="size8" layoutX="129.0" layoutY="-1.0" prefHeight="29.0" prefWidth="33.0" text="1">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="288.0" layoutY="238.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="171.0" prefWidth="197.0">
+         <children>
+            <ImageView fx:id="cloud0" fitHeight="136.0" fitWidth="127.0" layoutX="40.0" layoutY="14.0" onMouseClicked="#choose_cloud" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/cloud_card.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="cloudstudent00" fitHeight="33.0" fitWidth="40.0" layoutX="60.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_blue.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="cloudstudent01" fitHeight="33.0" fitWidth="40.0" layoutX="104.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_green.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="cloudstudent02" fitHeight="33.0" fitWidth="40.0" layoutX="71.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_red.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="cloudstudent03" fitHeight="33.0" fitWidth="33.0" layoutX="116.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_green.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="414.0" layoutY="336.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="171.0" prefWidth="221.0">
+         <children>
+            <ImageView fx:id="cloud2" fitHeight="119.0" fitWidth="120.0" layoutX="51.0" layoutY="26.0" onMouseClicked="#choose_cloud" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/cloud_card.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="cloudstudent20" fitHeight="33.0" fitWidth="40.0" layoutX="68.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_blue.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="cloudstudent21" fitHeight="33.0" fitWidth="40.0" layoutX="118.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_green.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="cloudstudent22" fitHeight="33.0" fitWidth="40.0" layoutX="78.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_red.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="cloudstudent021" fitHeight="33.0" fitWidth="40.0" layoutX="118.0" layoutY="95.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_red.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="594.0" layoutY="234.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="178.0" prefWidth="251.0">
+         <children>
+            <ImageView fx:id="cloud1" fitHeight="119.0" fitWidth="105.0" layoutX="16.0" layoutY="44.0" onMouseClicked="#choose_cloud" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/cloud_card.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="cloudstudent10" fitHeight="33.0" fitWidth="40.0" layoutX="26.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_blue.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="cloudstudent11" fitHeight="33.0" fitWidth="40.0" layoutX="69.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_green.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="cloudstudent12" fitHeight="33.0" fitWidth="40.0" layoutX="36.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_red.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="cloudstudent0211" fitHeight="33.0" fitWidth="40.0" layoutX="74.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@wooden_pieces/wooden_pieces/student_red.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <Button fx:id="button_for_boards" layoutX="921.0" mnemonicParsing="false" onAction="#show_boards" prefHeight="94.0" prefWidth="159.0" style="-fx-background-color: orange;" text="sale" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
