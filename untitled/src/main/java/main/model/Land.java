@@ -32,7 +32,7 @@ public interface Land extends Serializable {
      * @param input the type of the Student that you want to know the influence
      * @return an integer: the influence
      */
-    int getInfluence(Type_Student input);
+    int getInfluence(ArrayList<Type_Student> input);
     /**
      *
      * @return boolean: "noEntry" state

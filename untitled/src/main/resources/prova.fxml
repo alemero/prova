@@ -5,14 +5,14 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.HBox?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #87cefa;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MatchController">
     <Pane fx:id="land_view" visible="true">
     <children>
-        <AnchorPane layoutX="186.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="279.0">
+        <AnchorPane fx:id="land1" layoutX="186.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="279.0">
             <children>
                 <ImageView fx:id="island1" fitHeight="205.0" fitWidth="227.0" layoutX="24.0" layoutY="2.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -81,7 +81,7 @@
                 </Label>
             </children>
         </AnchorPane>
-        <AnchorPane layoutX="600.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="251.0">
+        <AnchorPane fx:id="land3" layoutX="600.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="251.0">
             <children>
                 <ImageView fx:id="island3" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="10.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -98,7 +98,7 @@
                         <Image url="@wooden_pieces/wooden_pieces/grey_tower.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="blank3" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="black3" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
                     </image>
@@ -150,7 +150,7 @@
                 </Label>
             </children>
         </AnchorPane>
-        <AnchorPane layoutX="400.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="262.0">
+        <AnchorPane fx:id="land2" layoutX="400.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="262.0">
             <children>
                 <ImageView fx:id="island2" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="10.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -219,7 +219,7 @@
                 </Label>
             </children>
         </AnchorPane>
-        <AnchorPane layoutX="180.0" layoutY="501.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
+        <AnchorPane fx:id="land9" layoutX="180.0" layoutY="501.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
             <children>
                 <ImageView fx:id="island9" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="10.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -288,7 +288,7 @@
                 </Label>
             </children>
         </AnchorPane>
-        <AnchorPane layoutX="589.0" layoutY="501.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="262.0">
+        <AnchorPane fx:id="land7" layoutX="589.0" layoutY="501.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="262.0">
             <children>
                 <ImageView fx:id="island7" fitHeight="205.0" fitWidth="227.0" layoutX="24.0" layoutY="11.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -310,7 +310,7 @@
                         <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
                     </image>
                 </ImageView>
-                <ImageView fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="mn7" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
                     </image>
@@ -357,7 +357,7 @@
                 </Label>
             </children>
         </AnchorPane>
-        <AnchorPane layoutX="-21.0" layoutY="441.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
+        <AnchorPane fx:id="land10" layoutX="-21.0" layoutY="441.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
             <children>
                 <ImageView fx:id="island10" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="7.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -426,7 +426,7 @@
                 </Label>
             </children>
         </AnchorPane>
-        <AnchorPane layoutX="-37.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
+        <AnchorPane fx:id="land11" layoutX="-37.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
             <children>
                 <ImageView fx:id="island11" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="10.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -495,7 +495,7 @@
                 </Label>
             </children>
         </AnchorPane>
-        <AnchorPane layoutX="-13.0" layoutY="71.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
+        <AnchorPane fx:id="land0" layoutX="-13.0" layoutY="71.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
             <children>
                 <ImageView fx:id="island0" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="10.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -564,7 +564,7 @@
                 </Label>
             </children>
         </AnchorPane>
-        <AnchorPane layoutX="800.0" layoutY="85.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
+        <AnchorPane fx:id="land4" layoutX="800.0" layoutY="85.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
             <children>
                 <ImageView fx:id="island4" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="10.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -633,7 +633,7 @@
                 </Label>
             </children>
         </AnchorPane>
-        <AnchorPane layoutX="790.0" layoutY="430.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
+        <AnchorPane fx:id="land6" layoutX="790.0" layoutY="430.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
             <children>
                 <ImageView fx:id="island6" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="10.0" onMouseDragged="#moveto" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -702,7 +702,7 @@
                 </Label>
             </children>
         </AnchorPane>
-        <AnchorPane layoutX="821.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
+        <AnchorPane fx:id="land5" layoutX="821.0" layoutY="258.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
             <children>
                 <ImageView fx:id="island5" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="8.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -771,7 +771,7 @@
                 </Label>
             </children>
         </AnchorPane>
-        <AnchorPane layoutX="385.0" layoutY="501.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
+        <AnchorPane fx:id="land8" layoutX="385.0" layoutY="501.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
             <children>
                 <ImageView fx:id="island8" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="10.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -940,7 +940,7 @@
             <children>
                 <ImageView fx:id="board0" fitHeight="220.0" fitWidth="500.0" layoutX="50.0" layoutY="102.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@Graphical_Assets/Plancia/Plancia_DEF3.png" />
+                        <Image url="@Graphical_Assets/Plancia/Plancia_DEF2.png" />
                     </image>
                 </ImageView>
                 <ImageView fx:id="profgreen0" fitHeight="31.0" fitWidth="30.0" layoutX="401.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
@@ -1336,7 +1336,7 @@
             <children>
                 <ImageView fx:id="board1" fitHeight="220.0" fitWidth="500.0" layoutX="50.0" layoutY="102.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@Graphical_Assets/Plancia/Plancia_DEF3.png" />
+                        <Image url="@Graphical_Assets/Plancia/Plancia_DEF2.png" />
                     </image>
                 </ImageView>
                 <ImageView fx:id="profgreen1" fitHeight="31.0" fitWidth="30.0" layoutX="401.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
@@ -1732,7 +1732,7 @@
             <children>
                 <ImageView fx:id="board2" fitHeight="220.0" fitWidth="500.0" layoutX="50.0" layoutY="102.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
                     <image>
-                        <Image url="@Graphical_Assets/Plancia/Plancia_DEF3.png" />
+                        <Image url="@Graphical_Assets/Plancia/Plancia_DEF2.png" />
                     </image>
                 </ImageView>
                 <ImageView fx:id="profgreen2" fitHeight="31.0" fitWidth="30.0" layoutX="401.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">

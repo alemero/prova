@@ -3,12 +3,7 @@ package main.model;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Student implements Serializable {
-    private final Type_Student type;
-
-    public Student(Type_Student type) {
-        this.type = type;
-    }
+public record Student(Type_Student type) implements Serializable {
 
     public Type_Student getType() {
         return type;
@@ -24,7 +19,7 @@ public class Student implements Serializable {
 
     @Override
     public String toString() {
-        return "studente di colore "+ type;
+        return "studente di colore " + type;
     }
 
     @Override

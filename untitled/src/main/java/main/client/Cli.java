@@ -215,7 +215,6 @@ public class Cli implements View,Runnable{
                         action.cardAndMoveMN(me.getPlayedCard(), step);
                         try {
                             action.cardAndMoveMN(me.getPlayedCard(), step);
-                            action.controlLand(me);
                             action.uniteLands();
                         } catch (Exception e) {
                         }
