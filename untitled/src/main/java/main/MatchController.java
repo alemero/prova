@@ -14,12 +14,14 @@ import javafx.scene.layout.Pane;
 import main.client.Action;
 import main.client.Message4Server;
 import main.model.*;
+import main.client.View;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
-public class MatchController extends Thread{
+public class MatchController extends Thread implements View{
     private static Match match;
     private static Action action;
     private static Player me;
@@ -1765,13 +1767,160 @@ public class MatchController extends Thread{
 
     }
 
-    public static void setMatch(Match m) {match = m;}
+    public void setMatch(Match m) {
+        match = m;
+    }
+
+    @Override
+    public void setCards(List<AssistantCard> cards) {
+
+    }
+
+    @Override
+    public void setWilly(List<Wizards> willy) {
+
+    }
+
+    @Override
+    public void setClouds(List<Cloud> clouds) {
+
+    }
+
+    @Override
+    public void chooseMatch(List<String> join, List<String> resume) {
+
+    }
+
+    @Override
+    public void setNack() {
+
+    }
+
+    @Override
+    public String chooseLogin() {
+        return null;
+    }
+
+    @Override
+    public Land chooseLand(List<Land> lands) {
+        return null;
+    }
+
+    @Override
+    public Student chooseStudent(List<Student> student) {
+        return null;
+    }
+
+    @Override
+    public Type_Student chooseColorStudent() {
+        return null;
+    }
+
+    @Override
+    public void playerConnected(String username) {
+
+    }
+
+    @Override
+    public void playerDisconnected(String username) {
+
+    }
+
+    @Override
+    public void playerDisconnectedAll() {
+
+    }
+
+    @Override
+    public void finishedAC(Player p) {
+
+    }
+
+    @Override
+    public CharacterCard chooseChCard(CharacterCard[] cards) {
+        return null;
+    }
+
+    @Override
+    public void setCharacters(CharacterCard[] characters) {
+
+    }
 
     public static void setAction(Action a) {action = a;}
 
-    public static void setMe(Player m) {me = m;}
+    public  void setMe(Player m) {me = m;}
 
-    public static void setServer(Message4Server s) {server = s;}
+    @Override
+    public String getUsername() {
+        return null;
+    }
+
+    public  void setServer(Message4Server s) {server = s;}
+
+    @Override
+    public Wizards getWizard(List<Wizards> wizards) {
+        return null;
+    }
+
+    @Override
+    public Cloud getCloud(List<Cloud> clouds) {
+        return null;
+    }
+
+    @Override
+    public AssistantCard getAssistantCard(List<AssistantCard> cards) {
+        return null;
+    }
+
+    @Override
+    public int getNumStep(Player pl) {
+        return 0;
+    }
+
+    @Override
+    public void getWinner(Player pl) {
+
+    }
+
+    @Override
+    public int getDestination(Match match) {
+        return 0;
+    }
+
+    @Override
+    public void printMatch(Match match) {
+
+    }
+
+    @Override
+    public void printTurn(Player pl, String phase) {
+
+    }
+
+    @Override
+    public void lastRound() {
+
+    }
+
+    @Override
+    public int getNumPlayer() {
+        return 0;
+    }
+
+    @Override
+    public Student getStudent(Player pl) {
+        return null;
+    }
+
+    @Override
+    public void getTitolo() {
+
+    }
+
+    @Override
+    public void wakeUp(String state) {
+
+    }
 
     public static void setIn(ObjectInputStream i) {in = i;}
 
