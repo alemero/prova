@@ -849,7 +849,7 @@ public class MatchController extends Thread{
         int num_blue=pl.getBoard().getStudentsOfType(Type_Student.UNICORN);
         int num_yellow=pl.getBoard().getStudentsOfType(Type_Student.GNOME);
         int num_green=pl.getBoard().getStudentsOfType(Type_Student.FROG);
-        int num_pink=pl.getBoard().getStudentsOfType(Type_Student.FAIRIE);
+        int num_pink=pl.getBoard().getStudentsOfType(Type_Student.FAIRY);
         switch (i) {
             case 0 -> {
                 name0.setText(match.getPlayer()[0].getUserName());
@@ -897,7 +897,7 @@ public class MatchController extends Thread{
                 profblue0.setVisible(professors.containsKey(Type_Student.UNICORN) && professors.get(Type_Student.UNICORN) == pl);
                 profgreen0.setVisible(professors.containsKey(Type_Student.FROG) && professors.get(Type_Student.FROG) == pl);
                 profyellow0.setVisible(professors.containsKey(Type_Student.GNOME) && professors.get(Type_Student.GNOME) == pl);
-                profpink0.setVisible(professors.containsKey(Type_Student.FAIRIE) && professors.get(Type_Student.FAIRIE) == pl);
+                profpink0.setVisible(professors.containsKey(Type_Student.FAIRY) && professors.get(Type_Student.FAIRY) == pl);
             }
             case 1 -> {
                 name1.setText(match.getPlayer()[1].getUserName());
@@ -945,7 +945,7 @@ public class MatchController extends Thread{
                 profblue1.setVisible(professors.containsKey(Type_Student.UNICORN) && professors.get(Type_Student.UNICORN) == pl);
                 profgreen1.setVisible(professors.containsKey(Type_Student.FROG) && professors.get(Type_Student.FROG) == pl);
                 profyellow1.setVisible(professors.containsKey(Type_Student.GNOME) && professors.get(Type_Student.GNOME) == pl);
-                profpink1.setVisible(professors.containsKey(Type_Student.FAIRIE) && professors.get(Type_Student.FAIRIE) == pl);
+                profpink1.setVisible(professors.containsKey(Type_Student.FAIRY) && professors.get(Type_Student.FAIRY) == pl);
             }
             case 2 -> {
                 name2.setText(match.getPlayer()[2].getUserName());
@@ -993,7 +993,7 @@ public class MatchController extends Thread{
                 profblue2.setVisible(professors.containsKey(Type_Student.UNICORN) && professors.get(Type_Student.UNICORN) == pl);
                 profgreen2.setVisible(professors.containsKey(Type_Student.FROG) && professors.get(Type_Student.FROG) == pl);
                 profyellow2.setVisible(professors.containsKey(Type_Student.GNOME) && professors.get(Type_Student.GNOME) == pl);
-                profpink2.setVisible(professors.containsKey(Type_Student.FAIRIE) && professors.get(Type_Student.FAIRIE) == pl);
+                profpink2.setVisible(professors.containsKey(Type_Student.FAIRY) && professors.get(Type_Student.FAIRY) == pl);
             }
         }
     }
@@ -1169,7 +1169,7 @@ public class MatchController extends Thread{
         ArrayList<Type_Student> gnome=new ArrayList<>();
         gnome.add(Type_Student.GNOME);
         ArrayList<Type_Student> fairie=new ArrayList<>();
-        fairie.add(Type_Student.FAIRIE);
+        fairie.add(Type_Student.FAIRY);
         ArrayList<Type_Student> frog=new ArrayList<>();
         frog.add(Type_Student.FROG);
         ArrayList<Type_Student> unicorn=new ArrayList<>();
@@ -1876,7 +1876,7 @@ public class MatchController extends Thread{
                     File f=new File("untitled/src/main/resources/wooden_pieces/wooden_pieces/student_yellow.png");
                     yellow_student=new FileInputStream(f);
                 }
-                case FAIRIE -> {
+                case FAIRY -> {
                     imageView.setImage(new Image(pink_student));
                     File f=new File("untitled/src/main/resources/wooden_pieces/wooden_pieces/student_pink.png");
                     pink_student=new FileInputStream(f);

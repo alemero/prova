@@ -30,7 +30,7 @@ public class Bag implements Serializable {  //fare che in input mi dicono anche 
     public Student getRandomStudent() throws Exception{
         if(students.size()>0) {
             Random a = new Random();
-            int x = a.nextInt(2000);
+            int x = a.nextInt(200);
             x = x % students.size();
             return students.remove(x);
         }
@@ -38,4 +38,7 @@ public class Bag implements Serializable {  //fare che in input mi dicono anche 
             throw new Exception("No more students");
     }
 
+    public void ch12effect(List<Student> students){
+        this.students.addAll(students);
+    }
 }

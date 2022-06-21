@@ -1,32 +1,26 @@
 package main.client;
 
-import main.model.AssistantCard;
-import main.model.Student;
-import main.model.Wizards;
-
+import main.model.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintStream;
 
-import main.model.*;
 
 /**
  * This class contains all the possible message to send to the sever
  */
 public class Message4Server {
     private ObjectOutputStream out;
-    private ObjectInputStream in;
     private String name;
     private String message;
 
     /**
      *
-     * @param in the in parameter for TCP connection
      * @param out the out parameter for TCP connection
      */
-    Message4Server(ObjectInputStream in, ObjectOutputStream out){
+    Message4Server(ObjectOutputStream out){
         this.out=out;
-        this.in=in;
     }
 
     /**
@@ -42,7 +36,8 @@ public class Message4Server {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
-        }
+
+  }
     }
 
     /**
@@ -71,22 +66,6 @@ public class Message4Server {
                 name = "ChoosingGame";
                 out.writeObject(name);
                 out.writeObject(choice);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
-    }
-
-    /**
-     * The player's choice about the game to join/resume
-     * @param selected
-     */
-    public void sendGameSelected(String selected){
-        synchronized (this) {
-            try {
-                name = "GameSelected";
-                out.writeObject(name);
-                out.writeObject(selected);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -138,13 +117,23 @@ public class Message4Server {
     public void sendNumPlayers(int num){
         synchronized (this) {
             try {
-                name = "NumPlayers";
-                out.writeObject(name);
                 out.writeObject(num);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         }
+        System.out.println("Inviato: "+num);
+    }
+
+    public void sendExpertMatch (boolean expert) {
+        synchronized (this) {
+            try {
+                out.writeObject(expert);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        System.out.println("Inviato: "+expert);
     }
 
     /**
@@ -191,6 +180,7 @@ public class Message4Server {
                 out.writeObject(name);
                 out.writeObject(stu);
                 out.writeObject(pos);
+                System.out.println("mandato movedstudent");
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -229,6 +219,4 @@ public class Message4Server {
         }
     }
 
-    public void sendExpertMatch(boolean selected) {
-    }
 }

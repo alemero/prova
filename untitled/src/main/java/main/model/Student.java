@@ -1,13 +1,8 @@
 package main.model;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 public record Student(Type_Student type) implements Serializable {
-
-    public Type_Student getType() {
-        return type;
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -19,11 +14,7 @@ public record Student(Type_Student type) implements Serializable {
 
     @Override
     public String toString() {
-        return "studente di colore " + type;
+        return type.toString() + "(X)" + "\u001B[0m";
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(type);
-    }
 }

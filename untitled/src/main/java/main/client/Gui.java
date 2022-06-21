@@ -32,6 +32,11 @@ public class Gui extends Application implements View {
     }
 
     @Override
+    public void setServer(Message4Server server) {
+
+    }
+
+    @Override
     public Wizards getWizard(List<Wizards> wizards) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("chooseWizard.fxml"));
         try {
@@ -156,6 +161,51 @@ public class Gui extends Application implements View {
     @Override
     public String chooseLogin() {
         return null;
+    }
+
+    @Override
+    public Land chooseLand(List<Land> lands) {
+        return null;
+    }
+
+    @Override
+    public Student chooseStudent(List<Student> student) {
+        return null;
+    }
+
+    @Override
+    public Type_Student chooseColorStudent() {
+        return null;
+    }
+
+    @Override
+    public void playerConnected(String username) {
+
+    }
+
+    @Override
+    public void playerDisconnected(String username) {
+
+    }
+
+    @Override
+    public void playerDisconnectedAll() {
+
+    }
+
+    @Override
+    public void finishedAC(Player p) {
+
+    }
+
+    @Override
+    public CharacterCard chooseChCard(CharacterCard[] cards) {
+        return null;
+    }
+
+    @Override
+    public void setCharacters(CharacterCard[] characters) {
+
     }
 
     @Override

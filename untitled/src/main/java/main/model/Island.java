@@ -1,25 +1,30 @@
 package main.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * One of the two implementation of Land
  */
-public class Island implements Land {
+public class Island implements Land, Serializable {
     private final ArrayList<Student> students;
     private final int islandID;
     private Tower tower;
     private boolean noEntry;
+    private boolean hasChanged;
+    private Tower previousTower;
 
     /**
-     * Costructor: tower null, noEntry false, students empty
+     * Constructor: tower null, noEntry false, students empty
      * @param id unique index of the island
      */
     public Island (int id){
         islandID = id;
         tower = null;
+        previousTower = null;
         noEntry = false;
         students=new ArrayList<>();
+        hasChanged=false;
     }
 
     /**
@@ -91,11 +96,10 @@ public class Island implements Land {
     public void changeTower(ArrayList<Tower> n_tower) {
         if(this.tower!=null){
             this.tower.getBoard().returnTower(this.tower);
-            this.tower=n_tower.get(0);
+            previousTower = this.tower;
         }
-        else{
-            this.tower=n_tower.get(0);
-        }
+        this.tower=n_tower.get(0);
+        hasChanged = true;
     }
 
     /**
@@ -112,6 +116,7 @@ public class Island implements Land {
         ArrayList<Island> arr=new ArrayList<>();
         arr.add(this);
         arr.addAll(other.getIslands());
+        hasChanged=true;
         return new Archipelago(arr);
     }
 
@@ -133,7 +138,7 @@ public class Island implements Land {
     public ArrayList<Tower> getAllTowers() {
         ArrayList<Tower>t=new ArrayList<>();
         t.add(tower);
-        return t;
+        return (ArrayList<Tower>) t.clone();
     }
 
     /**
@@ -165,7 +170,7 @@ public class Island implements Land {
             return tower.getColor(); //
         }
         else
-            throw new Exception("There is currently no Towers here");
+            throw new Exception("There are currently no Towers here");
     }
 
     /**
@@ -181,16 +186,20 @@ public class Island implements Land {
     }
 
     @Override
-    public String toString() {
-        String a= "isola " + islandID +
-                " con studenti: " + students;
-        if(tower!=null)
-            a=a+" e " + tower;
-        else a=a+" non ha torri";
-        if (noEntry==false){
-            return a;
+    public boolean hasChanged() {
+        return hasChanged;
+    }
+
+    @Override
+    public ArrayList<Tower> getPreviousTowers() {
+        ArrayList<Tower> previousTowers;
+
+        if (previousTower == null || !hasChanged) {
+            return null;
         }
-        else
-            return a+" entrata chiusa";
+        previousTowers = new ArrayList<>();
+        previousTowers.add(previousTower);
+        hasChanged = false;
+        return previousTowers;
     }
 }

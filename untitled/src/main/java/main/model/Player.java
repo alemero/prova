@@ -12,7 +12,7 @@ public class Player implements Serializable {
     private AssistantCard playedCard;
 
     /**
-     * @param userName
+     * @param userName the userName of the player
      * @param color the color of the towers this player has in their board
      * @param towersNum 8 if there are 2 or 4 players, 6 if the number of players is 3
      * @param wizard associated with the rear of the cards
@@ -67,11 +67,15 @@ public class Player implements Serializable {
 
     /**
      * Plays the card with the specified value and removes it from the deck, but saves it as the played card
-     * @return Mother Nature's steps of the played card
-     * @param value
+     * @param assistantCard the played assistant card
      */
-    public void draw (AssistantCard value){
-
+    public void draw (AssistantCard assistantCard){
+        for (AssistantCard card : deck) {
+            if (assistantCard.getValue() == card.getValue()) {
+                playedCard = deck.remove(deck.indexOf(card));
+                break;
+            }
+        }
     }
 
     /**
@@ -92,9 +96,93 @@ public class Player implements Serializable {
 
     @Override
     public String toString() {
-        return "Giocatore:" + userName +'\n'+
-                "Colore corrispondente: " + color +'\n'+
-                "con Sala:" + board;
+        return "" + color.toString() + megaUserName() + "\u001B[0m" + board +'\n';
+    }
+
+    private String megaUserName () {
+        String userName = this.userName.toLowerCase();
+        StringBuilder megaName = new StringBuilder();
+
+        for (int i=0; i<userName.length(); i++) {
+            switch (userName.charAt(i)) {
+                case 'a', 'v', 'm', 'n' -> megaName.append("     ");
+                case 'b', 'r', 'p', 'd', 'g' -> megaName.append(" _  ");
+                case 'c', 'f', 'e', 's' -> megaName.append(" _ ");
+                case 't' -> megaName.append("___ ");
+                case 'i', 'j' -> megaName.append("  ");
+                case 'q', 'o', 'k', 'l', 'x' -> megaName.append("   ");
+                case 'w' -> megaName.append("       ");
+                case 'z' -> megaName.append("__ ");
+                default -> megaName.append("    ");
+            }
+        }
+
+        megaName.append("\n");
+
+        for (int i=0; i<userName.length(); i++) {
+            switch (userName.charAt(i)) {
+                case 'a' -> megaName.append(" /\\  ");
+                case 'b' -> megaName.append("|_> ");
+                case 'r', 'u' -> megaName.append("| | ");
+                case 'c' -> megaName.append("/  ");
+                case 'g' -> megaName.append("/_  ");
+                case 'e', 'f' -> megaName.append("|_ ");
+                case 'd' -> megaName.append("| \\ ");
+                case 'h', 'p', 'y' -> megaName.append("|_| ");
+                case 'i' -> megaName.append("| ");
+                case 'j' -> megaName.append("┐ ");
+                case 'k' -> megaName.append("|/ ");
+                case 'l' -> megaName.append("|  ");
+                case 'm' -> megaName.append("|\\/| ");
+                case 'n' -> megaName.append("|\\ | ");
+                case 'q', 'o' -> megaName.append("/\\ ");
+                case 's' -> megaName.append("/_ ");
+                case 't' -> megaName.append(" |  ");
+                case 'v' -> megaName.append("\\  / ");
+                case 'w' -> megaName.append("\\    / ");
+                case 'x' -> megaName.append("\\/ ");
+                case 'z' -> megaName.append(" / ");
+                default -> megaName.append("   ");
+            }
+        }
+
+        megaName.append("\n");
+
+        for (int i=0; i<userName.length(); i++) {
+            switch (userName.charAt(i)) {
+                case 'a' -> megaName.append("/‾‾\\ ");
+                case 'b' -> megaName.append("|_> ");
+                case 'c' -> megaName.append("\\_ ");
+                case 'd' -> megaName.append("|_/ ");
+                case 'e', 'l' -> megaName.append("|_ ");
+                case 'f' -> megaName.append("|  ");
+                case 'g' -> megaName.append("\\_| ");
+                case 'h' -> megaName.append("| | ");
+                case 'i' -> megaName.append("| ");
+                case 'j' -> megaName.append("⌡ ");
+                case 'k' -> megaName.append("|\\ ");
+                case 'm' -> megaName.append("|  | ");
+                case 'n' -> megaName.append("| \\| ");
+                case 'o' -> megaName.append("\\/ ");
+                case 'p' -> megaName.append("|   ");
+                case 'q' -> megaName.append("\\X ");
+                case 'r' -> megaName.append("|‾\\ ");
+                case 's' -> megaName.append("_/ ");
+                case 't' -> megaName.append(" |  ");
+                case 'u' -> megaName.append("|_| ");
+                case 'v' -> megaName.append(" \\/  ");
+                case 'w' -> megaName.append(" \\/\\/  ");
+                case 'x' -> megaName.append("/\\ ");
+                case 'y' -> megaName.append(" _| ");
+                case 'z' -> megaName.append("/_ ");
+                case '_' -> megaName.append("___");
+                default  -> megaName.append("   ");
+            }
+        }
+
+        megaName.append("\n");
+
+        return megaName.toString();
     }
 
     /**

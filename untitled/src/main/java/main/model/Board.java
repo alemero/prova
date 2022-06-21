@@ -2,6 +2,7 @@ package main.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The class representing the board each player controls in an ordinary match.
@@ -42,7 +43,7 @@ public class Board implements Serializable {
      */
     private void initializeTowers(int towersNum, Colors color){
         Tower temp;
-        towers=new ArrayList<>(towersNum);
+        towers=new ArrayList<>();
 
         for (int i=0; i< towersNum; i++){
             temp = new Tower(color, this);
@@ -67,22 +68,17 @@ public class Board implements Serializable {
      * @return the number of students of the specified type sitting in a table
      */
     public int getStudentsOfType(Type_Student t) {
-        switch (t) {
-            case DRAGON:
-                return dragons.size();
-            case GNOME:
-                return gnomes.size();
-            case FAIRIE:
-                return fairies.size();
-            case UNICORN:
-                return unicorns.size();
-            default:
-                return frogs.size();
-        }
+        return switch (t) {
+            case DRAGON -> dragons.size();
+            case GNOME -> gnomes.size();
+            case FAIRY -> fairies.size();
+            case UNICORN -> unicorns.size();
+            default -> frogs.size();
+        };
     }
 
     /**
-     * @deprecated
+     *
      * @return a copy of the list of the towers on the board
      */
     public ArrayList<Tower> getTowers() {
@@ -108,31 +104,21 @@ public class Board implements Serializable {
     /**
      * Checks if the specified student is waiting in the entrance and transfers it to the correct table
      * @param student
-     * @throws Exception if the specified student is not present in the entrance
+     * @throws Exception if the table you want to put the student in is already full
      */
     public void placeStudent(Student student) throws Exception{
-        if (getStudentsOfType(student.getType()) == 10){
+        if (getStudentsOfType(student.type()) == 10){
             throw new Exception("This table is already full. Please place that student on a cloud.");
         }
 
-        switch (student.getType()){
-            case DRAGON:
-                dragons.add(student);
-                break;
-            case GNOME:
-                gnomes.add(student);
-                break;
-            case FAIRIE:
-                fairies.add(student);
-                break;
-            case UNICORN:
-                unicorns.add(student);
-                break;
-            case FROG:
-                frogs.add(student);
-                break;
+        switch (student.type()) {
+            case DRAGON -> dragons.add(student);
+            case GNOME -> gnomes.add(student);
+            case FAIRY -> fairies.add(student);
+            case UNICORN -> unicorns.add(student);
+            default -> frogs.add(student);
         }
-            entrance.remove(student);
+        removeStudent(student);
     }
 
     /**
@@ -145,11 +131,21 @@ public class Board implements Serializable {
 
     /**
      * Removes the specified student from the entrance
-     * @param s
+     * @param student
      * @return the student removed
      */
-    public Student removeStudent(Student s){
-        return entrance.remove(entrance.indexOf(s));
+    public Student removeStudent(Student student){
+        int found = 9;
+
+        for (int i=0; i< entrance.size(); i++) {
+            if (entrance.get(i).type().equals(student.type())) {
+                found = i;
+                break;
+            }
+        }
+        if (found!=9)
+            return entrance.remove(found);
+        else return null;
     }
 
     /**
@@ -182,18 +178,115 @@ public class Board implements Serializable {
 
     @Override
     public String toString() {
-        String a= "Rosso= " + dragons.size() +'\n'+
-                "Blu= " + unicorns.size() +'\n'+
-                "Giallo= " + fairies.size() +'\n'+
-                "Rosa=" + gnomes.size() +'\n'+
-                "Verde= " + frogs.size() +'\n'+
-                "numero torri= "+towers.size();
-        a=a+"\nentrata: ";
-        if (entrance!=null)
-            for (Student s:entrance) {
-                a=a+s.toString()+" ";
-            }
-        return a;
+        StringBuilder board = new StringBuilder().append(
+                """
+                        ╔═════════════╦══════════════════════════════════════════════════════════╦═════════════════╗
+                        ║             ║                                                          ║                 ║
+                        """);
+        board.append("║   ");
+        addStudentToString(board, 7);
+        board.append(" ");
+        addStudentToString(board, 0);
+        board.append("   ║   ").append(Type_Student.DRAGON).append("Draghi   \u001B[0m:  ");
+        addTableToString(board, dragons);
+        board.append("   ║                 ║\n");
+        board.append("║             ║                                                          ║ ");
+        addTowerToString(board, 0);
+        board.append(" ");
+        addTowerToString(board, 4);
+        board.append(" ");
+        addTowerToString(board, 8);
+        board.append(" ");
+        addTowerToString(board, 12);
+        board.append(" \u001B[0m║\n");
+        board.append("║   ");
+        addStudentToString(board, 1);
+        board.append(" ");
+        addStudentToString(board, 2);
+        board.append("   ║   ").append(Type_Student.GNOME).append("Gnomi   \u001B[0m :  ");
+        addTableToString(board, gnomes);
+        board.append("   ║ ");
+        addTowerToString(board, 1);
+        board.append(" ");
+        addTowerToString(board, 5);
+        board.append(" ");
+        addTowerToString(board, 9);
+        board.append(" ");
+        addTowerToString(board, 13);
+        board.append(" \u001B[0m║\n");
+        board.append("║                                                                        ║                 ║\n");
+        board.append("║   ");
+        addStudentToString(board, 3);
+        board.append("    ");
+        board.append("       ").append(Type_Student.FAIRY).append("Fate    \u001B[0m :  ");
+        addTableToString(board, fairies);
+        board.append("   ║                 ║\n");
+        board.append("║                                                                        ║                 ║\n");
+        board.append("║   ");
+        addStudentToString(board, 4);
+        board.append(" ");
+        addStudentToString(board, 5);
+        board.append("   ║   ").append(Type_Student.UNICORN).append("Unicorni\u001B[0m :  ");
+        addTableToString(board, unicorns);
+        board.append("   ║ ");
+        addTowerToString(board, 2);
+        board.append(" ");
+        addTowerToString(board, 6);
+        board.append(" ");
+        addTowerToString(board, 10);
+        board.append(" ");
+        addTowerToString(board, 14);
+        board.append(" \u001B[0m║\n");
+        board.append("║             ║                                                          ║ ");
+        addTowerToString(board, 3);
+        board.append(" ");
+        addTowerToString(board, 7);
+        board.append(" ");
+        addTowerToString(board, 11);
+        board.append(" ");
+        addTowerToString(board, 15);
+        board.append(" \u001B[0m║\n");
+        board.append("║   ");
+        addStudentToString(board, 8);
+        board.append(" ");
+        addStudentToString(board, 6);
+        board.append("   ║   ").append(Type_Student.FROG).append("Rane     \u001B[0m:  ");
+        addTableToString(board, frogs);
+        board.append("""
+                   ║                 ║
+                ║             ║                                                          ║                 ║
+                ╚═════════════╩══════════════════════════════════════════════════════════╩═════════════════╝""");
+        return board.toString();
+    }
+
+    private void addStudentToString (StringBuilder board, int position){
+        if (entrance == null)
+            board.append("( )");
+        else if (position > entrance.size()-1)
+            board.append("( )");
+        else
+            board.append(entrance.get(position).toString());
+    }
+
+    private void addTableToString (StringBuilder board, ArrayList<Student> table) {
+        for (int i = 0; i<10; i++) {
+            if (i > table.size()-1)
+                board.append(" ( )");
+            else
+                board.append(" ").append(table.get(i).toString());
+        }
+    }
+
+    private void addTowerToString (StringBuilder board, int position) {
+        if (position/2 > towers.size()-1)
+            if (position%2 ==1)
+                board.append("( )");
+            else
+                board.append("   ");
+        else if (position%2 == 0)
+            board.append(towers.get(0).getColor().toString()).append("|_|");
+        else
+            board.append(towers.get(0).getColor().toString()).append("/_\\");
     }
 
     /**
@@ -202,5 +295,70 @@ public class Board implements Serializable {
      */
     public void setTowers(ArrayList<Tower> towers) {
         this.towers = towers;
+    }
+
+    public void ch_11_effect(Student s){
+        switch (s.type()) {
+            case DRAGON -> dragons.add(s);
+            case GNOME -> gnomes.add(s);
+            case FAIRY -> fairies.add(s);
+            case UNICORN -> unicorns.add(s);
+            case FROG -> frogs.add(s);
+        }
+    }
+
+    public List<Student> ch_12_effect(Type_Student type){
+        List<Student> stu=new ArrayList<>();
+        switch (type){
+            case DRAGON:
+                for (int i = 0; i < 3; i++)
+                    if(!dragons.isEmpty())
+                        stu.add(dragons.remove(0));
+                break;
+            case GNOME:
+                for (int i = 0; i < 3; i++)
+                    if(!gnomes.isEmpty())
+                        stu.add(gnomes.remove(0));
+                break;
+            case FAIRY:
+                for (int i = 0; i < 3; i++)
+                    if(!fairies.isEmpty())
+                        stu.add(fairies.remove(0));
+                break;
+            case UNICORN:
+                for (int i = 0; i < 3; i++)
+                    if(!unicorns.isEmpty())
+                        stu.add(unicorns.remove(0));
+                break;
+            case FROG:
+                for (int i = 0; i < 3; i++)
+                    if(!frogs.isEmpty())
+                        stu.add(frogs.remove(0));
+                break;
+        }
+        return stu;
+    }
+
+    public void ch_10_effect(Student st,Type_Student type){
+        try {
+            this.placeStudent(st);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        entrance.remove(st);
+        switch (type) {
+            case DRAGON -> entrance.add(dragons.remove(0));
+            case GNOME -> entrance.add(gnomes.remove(0));
+            case FAIRY -> entrance.add(fairies.remove(0));
+            case UNICORN -> entrance.add(unicorns.remove(0));
+            case FROG -> entrance.add(frogs.remove(0));
+        }
+    }
+
+    public void ch_7_effect(Student st1, Student st2, Student st3, List<Student> stu){
+        entrance.remove(st1);
+        entrance.remove(st2);
+        entrance.remove(st3);
+        entrance.addAll(stu);
     }
 }

@@ -2,14 +2,13 @@ package main.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /**
- * it contains 3 or 4 students (it depends by the number of players)
+ * it contains 3 or 4 students (it depends on the number of players)
  */
 public class Cloud implements Serializable {
 
-    private final Student[] students;
+    private ArrayList<Student> students;
     private final Bag bag;
     private boolean hasBeenChosen;
     private final int nop;
@@ -18,22 +17,19 @@ public class Cloud implements Serializable {
      *
      * @param bag link of the bag of the game
      * @param number_of_players necessary in order to know the number of Students to get
-     * @throws Exception
+     * @throws Exception if the number of players is none between 2 and 3
      */
     public Cloud (Bag bag, int number_of_players) throws Exception{
         if(number_of_players==2 || number_of_players==4){
-            students = new Student[3];
+            students = new ArrayList<>(3);
             nop=3;
         }
         else if(number_of_players==3){
-            students = new Student[4];
+            students = new ArrayList<>(4);
             nop=4;
         }
         else
             throw new Exception("Wrong number of players");
-        for(int i=0; i<nop; i++){
-            students[i]=null;
-        }
         this.bag = bag;
         hasBeenChosen=false;
     }
@@ -41,11 +37,17 @@ public class Cloud implements Serializable {
     /**
      * refills the cloud automatically
      */
-    public Student[] importStudents() throws Exception{
+    public void importStudents() throws Exception{
         for (int i = 0; i < nop; i++) {
-            students[i] = bag.getRandomStudent();
+            students.add(bag.getRandomStudent());
         }
-        return students.clone();
+    }
+
+    /**
+     * deletes all the students on this cloud
+     */
+    public void clearStudents() {
+        students.clear();
     }
 
     /**
@@ -53,13 +55,7 @@ public class Cloud implements Serializable {
      * @return ArrayList that contains the students of the cloud
      */
     public ArrayList<Student> getStudents() {
-        ArrayList<Student> s = new ArrayList<>();
-        int i = 0;
-        while (i<nop && students[i]!=null){
-            s.add(students[i]);
-            i++;
-        }
-        return s;
+        return (ArrayList<Student>) students.clone();
     }
 
     /**
@@ -84,9 +80,37 @@ public class Cloud implements Serializable {
         hasBeenChosen = false;
     }
 
+    public void setStudents(ArrayList<Student> students) {
+        this.students = students;
+    }
 
     @Override
-    public String toString() {
-        return "Studenti della nuvola: " + Arrays.toString(students);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Cloud cloud = (Cloud) o;
+
+        return students.equals(cloud.students);
     }
+
+    public Cloud clone () {
+        Cloud cloud;
+        int players;
+
+        if (nop == 3)
+            players = 2;
+        else
+            players = 3;
+
+        try {
+            cloud = new Cloud(bag, players);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        ArrayList<Student>s= (ArrayList<Student>) students.clone();
+        cloud.setStudents(s);
+        return cloud;
+    }
+
 }

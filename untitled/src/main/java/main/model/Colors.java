@@ -4,23 +4,27 @@ import java.io.Serializable;
 
 public enum Colors implements Serializable {
 
-    WHITE ("Bianco"),
-    BLACK ("Nero"),
-    GREY ("Grigio");
+    WHITE ("\u001b[37m", "Bianco"),
+    BLACK ("\u001b[30;1m", "Nero"),
+    GREY ("\u001b[35m", "Grigio");
 
     private final String color;
+    private final String name;
 
-    Colors(String color) {
+    Colors(String color, String name) {
         this.color = color;
+        this.name = name;
     }
 
-    public String getColor()
+    public String getName()
     {
-        return color;
+        return name;
     }
 
     @Override
     public String toString() {
         return color;
     }
+
+
 }
