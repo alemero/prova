@@ -48,14 +48,14 @@ public class Main extends Application {
             }
         }
 
-        MatchController.setMe(p);
+        MatchController.setme(p);
+        MatchController.setmatch(m);
         MatchController.setAction(new Action(m));
         View gui=new Gui(stage);
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("prova.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Eriantys");
         MainController.setGui(gui);
-        ((MatchController)fxmlLoader.getController()).setMatch(m);
         stage.setScene(scene);
         stage.sizeToScene();
         stage.show();

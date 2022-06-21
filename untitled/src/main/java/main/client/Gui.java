@@ -114,8 +114,7 @@ public class Gui extends Thread implements View {
 
     }
 
-    @Override
-    public void setMe(Player me) {
+    public  void setMe(Player me) {
 
     }
 
@@ -123,6 +122,7 @@ public class Gui extends Thread implements View {
     public void setMatch(Match match) {
 
     }
+
 
     @Override
     public void setCards(List<AssistantCard> cards) {

@@ -573,6 +573,7 @@ public class MatchController extends Thread implements View{
     @FXML
     ImageView coin0;
 
+
     public void initialize(){
         white0.setVisible(false);
         white1.setVisible(false);
@@ -1768,8 +1769,8 @@ public class MatchController extends Thread implements View{
     }
 
 
-    @Override
-    public static void setMatch(Match m) {
+
+    public static void setmatch(Match m) {
         match = m;
     }
 
@@ -1848,9 +1849,10 @@ public class MatchController extends Thread implements View{
 
     }
 
+
     public static void setAction(Action a) {action = a;}
 
-    public  void setMe(Player m) {me = m;}
+    public static void setme(Player m) {me = m;}
 
     @Override
     public String getUsername() {
@@ -1921,6 +1923,16 @@ public class MatchController extends Thread implements View{
 
     @Override
     public void wakeUp(String state) {
+
+    }
+
+    @Override
+    public void setMe(Player me) {
+
+    }
+
+    @Override
+    public void setMatch(Match match) {
 
     }
 
@@ -2114,4 +2126,6 @@ public class MatchController extends Thread implements View{
             e.printStackTrace();
         }
     }
+
+
 }
