@@ -2,17 +2,16 @@ package main;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import main.client.Action;
 import main.client.Gui;
 import main.client.View;
-import main.model.Colors;
-import main.model.Match;
-import main.model.Player;
-import main.model.Wizards;
+import main.model.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Main extends Application {
 
@@ -20,8 +19,37 @@ public class Main extends Application {
     public void start(Stage stage) throws IOException {
         Player p=new Player("ale", Colors.BLACK,8, Wizards.WIZARD1,false);
         Player p1=new Player("antonio", Colors.WHITE,8, Wizards.WIZARD2,false);
-        Player p2=new Player("luigi", Colors.GREY,8, Wizards.WIZARD2,false);
+        Player p2=new Player("luigi", Colors.GREY,8, Wizards.WIZARD3,false);
         Match m=new Match(p,p1,p2);
+        try {
+            m.getCloud()[0].importStudents();
+            m.getCloud()[1].importStudents();
+            m.getCloud()[2].importStudents();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        for (Player player:m.getPlayer()) {
+            ArrayList<Student> a=new ArrayList<>();
+            for (int i = 0; i < 9; i++) {
+                try {
+                    a.add(m.getBag().getRandomStudent());
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            try {
+                player.getBoard().setEntrance(a);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        /*for (int i = 0; i < 9; i++) {
+            try {
+                System.out.println(p.getBoard().getEntrance().get(i).toString());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }*/
         MatchController.setMatch(m);
         MatchController.setMe(p);
         MatchController.setAction(new Action(m));
@@ -33,6 +61,24 @@ public class Main extends Application {
         stage.setScene(scene);
         stage.sizeToScene();
         stage.show();
+
+        Thread thread=new Thread((MatchController)fxmlLoader.getController());
+        thread.setDaemon(true);
+        thread.start();
+        /*Thread th=new Thread(new Runnable() {
+            @Override
+            public void run() {
+                synchronized (this) {
+                    try {
+                        this.wait(11000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                MatchController.getMatch().getLands().get(6).addStudent(new Student(Type_Student.DRAGON));
+            }
+        });
+        th.start();*/
     }   
 
     public static void main(String[] args) {

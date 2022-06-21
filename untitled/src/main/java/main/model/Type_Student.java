@@ -24,9 +24,9 @@ public enum Type_Student implements Serializable {
             case ("unicorn"):
                 return "Blu";
             case ("fairie"):
-                return "Giallo";
+                return "rosa";
             case ("gnome"):
-                return "Rosa";
+                return "giallo";
         }
         return null;
     }

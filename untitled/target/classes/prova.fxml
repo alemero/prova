@@ -10,63 +10,43 @@
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #87cefa;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MatchController">
-    <Pane fx:id="land_view" visible="true">
+    <Pane fx:id="land_view">
     <children>
         <AnchorPane fx:id="land1" layoutX="186.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="279.0">
             <children>
                 <ImageView fx:id="island1" fitHeight="205.0" fitWidth="227.0" layoutX="24.0" layoutY="2.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@wooden_pieces/wooden_pieces/island1.png" />
-                    </image>
+                    <Image url="@wooden_pieces/wooden_pieces/island1.png" />
                 </ImageView>
                 <ImageView fx:id="white1" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@wooden_pieces/wooden_pieces/white_tower.png" />
-                    </image>
+                    <Image url="@wooden_pieces/wooden_pieces/white_tower.png" />
                 </ImageView>
                 <ImageView fx:id="grey1" fitHeight="80.0" fitWidth="70.0" layoutX="67.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@wooden_pieces/wooden_pieces/grey_tower.png" />
-                    </image>
+                    <Image url="@wooden_pieces/wooden_pieces/grey_tower.png" />
                 </ImageView>
                 <ImageView fx:id="black1" fitHeight="80.0" fitWidth="70.0" layoutX="92.0" layoutY="78.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
-                    </image>
+                    <Image url="@wooden_pieces/wooden_pieces/black_tower.png" />
                 </ImageView>
                 <ImageView fx:id="mn1" fitHeight="63.0" fitWidth="59.0" layoutX="137.0" layoutY="73.0" onMouseClicked="#selectmn" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
-                    </image>
+                    <Image url="@wooden_pieces/wooden_pieces/mother_nature.png" />
                 </ImageView>
                 <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@wooden_pieces/wooden_pieces/student_red.png" />
-                    </image>
+                    <Image url="@wooden_pieces/wooden_pieces/student_red.png" />
                 </ImageView>
                 <Label fx:id="red_1" layoutX="244.0" layoutY="39.0" prefHeight="18.0" prefWidth="59.0" text=":0" />
                 <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="70.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@wooden_pieces/wooden_pieces/student_blue.png" />
-                    </image>
+                    <Image url="@wooden_pieces/wooden_pieces/student_blue.png" />
                 </ImageView>
                 <Label fx:id="blue_1" layoutX="244.0" layoutY="76.0" text=":0" />
                 <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@wooden_pieces/wooden_pieces/student_green.png" />
-                    </image>
+                    <Image url="@wooden_pieces/wooden_pieces/student_green.png" />
                 </ImageView>
                 <Label fx:id="green_1" layoutX="244.0" layoutY="110.0" text=":0" />
                 <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@wooden_pieces/wooden_pieces/student_pink.png" />
-                    </image>
+                    <Image url="@wooden_pieces/wooden_pieces/student_pink.png" />
                 </ImageView>
                 <Label fx:id="pink_1" layoutX="244.0" layoutY="146.0" text=":0" />
                 <ImageView fitHeight="33.0" fitWidth="29.0" layoutX="209.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@wooden_pieces/wooden_pieces/student_yellow.png" />
-                    </image>
+                    <Image url="@wooden_pieces/wooden_pieces/student_yellow.png" />
                 </ImageView>
                 <Label fx:id="yellow_1" layoutX="244.0" layoutY="184.0" text=":0" />
                 <ImageView fitHeight="51.0" fitWidth="59.0" layoutX="42.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" visible="false">
@@ -869,7 +849,7 @@
                 </ImageView>
             </children>
         </AnchorPane>
-        <AnchorPane layoutX="414.0" layoutY="336.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="171.0" prefWidth="221.0">
+        <AnchorPane fx:id="cloud_for_three_player" layoutX="414.0" layoutY="336.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="171.0" prefWidth="221.0">
             <children>
                 <ImageView fx:id="cloud2" fitHeight="119.0" fitWidth="120.0" layoutX="51.0" layoutY="26.0" onMouseClicked="#choose_cloud" pickOnBounds="true" preserveRatio="true">
                     <image>
@@ -1330,6 +1310,7 @@
                     </image>
                 </ImageView>
                 <Label fx:id="ncoin0" layoutX="343.0" layoutY="48.0" rotate="90.0" text="0" />
+               <ImageView fx:id="wizard0" fitHeight="90.0" fitWidth="88.0" layoutX="458.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
             </children>
         </AnchorPane>
         <AnchorPane fx:id="one" layoutX="199.0" layoutY="92.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="339.0" prefWidth="581.0" rotate="-90.0">
@@ -1719,13 +1700,14 @@
                         <Image url="@wooden_pieces/wooden_pieces/student_blue.png" />
                     </image>
                 </ImageView>
-                <Label fx:id="name1" layoutX="415.0" layoutY="46.0" rotate="90.0" text="giocartore2" />
+                <Label fx:id="name1" layoutX="415.0" layoutY="50.0" rotate="90.0" text="giocartore2" />
                 <ImageView fx:id="coin1" fitHeight="90.0" fitWidth="90.0" layoutX="352.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                     <image>
                         <Image url="@Graphical_Assets/Moneta_base.png" />
                     </image>
                 </ImageView>
                 <Label fx:id="ncoin1" layoutX="343.0" layoutY="48.0" rotate="90.0" text="0" />
+               <ImageView fx:id="wizard1" fitHeight="90.0" fitWidth="88.0" layoutX="458.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
             </children>
         </AnchorPane>
         <AnchorPane fx:id="two" layoutX="519.0" layoutY="92.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="339.0" prefWidth="581.0" rotate="-90.0">
@@ -2115,13 +2097,14 @@
                         <Image url="@wooden_pieces/wooden_pieces/student_blue.png" />
                     </image>
                 </ImageView>
-                <Label fx:id="name2" layoutX="412.0" layoutY="45.0" rotate="90.0" text="giocartore3" />
+                <Label fx:id="name2" layoutX="420.0" layoutY="47.0" rotate="90.0" text="giocartore3" />
                 <ImageView fx:id="coin2" fitHeight="90.0" fitWidth="90.0" layoutX="349.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" rotate="90.0">
                     <image>
                         <Image url="@Graphical_Assets/Moneta_base.png" />
                     </image>
                 </ImageView>
                 <Label fx:id="ncoin2" layoutX="343.0" layoutY="40.0" rotate="90.0" text="0" />
+               <ImageView fx:id="wizard2" fitHeight="90.0" fitWidth="88.0" layoutX="458.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" />
             </children>
         </AnchorPane>
         <HBox layoutX="3.0" layoutY="535.0" prefHeight="218.0" prefWidth="1102.0" spacing="5.0">

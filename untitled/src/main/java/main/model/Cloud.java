@@ -57,7 +57,6 @@ public class Cloud implements Serializable {
         int i = 0;
         while (i<nop && students[i]!=null){
             s.add(students[i]);
-            students[i] = null;
             i++;
         }
         return s;

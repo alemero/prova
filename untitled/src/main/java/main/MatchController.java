@@ -1,6 +1,7 @@
 package main;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
@@ -16,11 +17,11 @@ import main.client.Action;
 import main.client.Message4Server;
 import main.model.*;
 
-import java.io.ObjectInputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Map;
 
-public class MatchController{
+public class MatchController extends Thread{
     private static Match match;
     private static Action action;
     private static Player me;
@@ -29,6 +30,11 @@ public class MatchController{
     private boolean selectedmn;
     private boolean selectedstudent;
     private Student assistantchoosen;
+    private FileInputStream red_student;
+    private FileInputStream yellow_student;
+    private FileInputStream green_student;
+    private FileInputStream blue_student;
+    private FileInputStream pink_student;
 
     @FXML
     Pane land_view;
@@ -522,6 +528,50 @@ public class MatchController{
     Label size10;
     @FXML
     Label size11;
+    @FXML
+    AnchorPane cloud_for_three_player;
+    @FXML
+    ImageView cloudstudent00;
+    @FXML
+    ImageView cloudstudent01;
+    @FXML
+    ImageView cloudstudent02;
+    @FXML
+    ImageView cloudstudent03;
+    @FXML
+    ImageView cloudstudent10;
+    @FXML
+    ImageView cloudstudent11;
+    @FXML
+    ImageView cloudstudent12;
+    @FXML
+    ImageView cloudstudent13;
+    @FXML
+    ImageView cloudstudent20;
+    @FXML
+    ImageView cloudstudent21;
+    @FXML
+    ImageView cloudstudent22;
+    @FXML
+    ImageView cloudstudent23;
+    @FXML
+    ImageView wizard0;
+    @FXML
+    ImageView wizard1;
+    @FXML
+    ImageView wizard2;
+    @FXML
+    Label ncoin0;
+    @FXML
+    Label ncoin1;
+    @FXML
+    Label ncoin2;
+    @FXML
+    ImageView coin1;
+    @FXML
+    ImageView coin2;
+    @FXML
+    ImageView coin0;
 
     public void initialize(){
         white0.setVisible(false);
@@ -571,66 +621,42 @@ public class MatchController{
         mn9.setVisible(false);
         mn10.setVisible(false);
         mn11.setVisible(false);
-        ArrayList<Type_Student> temp=new ArrayList<>();
-        temp.add(Type_Student.DRAGON);
-        red_1.setText(":"+match.getLands().get(1).getInfluence(temp));
-        red_2.setText(":"+match.getLands().get(2).getInfluence(temp));
-        red_3.setText(":"+match.getLands().get(3).getInfluence(temp));
-        red_4.setText(":"+match.getLands().get(4).getInfluence(temp));
-        red_5.setText(":"+match.getLands().get(5).getInfluence(temp));
-        red_7.setText(":"+match.getLands().get(7).getInfluence(temp));
-        red_8.setText(":"+match.getLands().get(8).getInfluence(temp));
-        red_9.setText(":"+match.getLands().get(9).getInfluence(temp));
-        red_10.setText(":"+match.getLands().get(10).getInfluence(temp));
-        red_11.setText(":"+match.getLands().get(11).getInfluence(temp));
-        temp.remove(0);
-        temp.add(Type_Student.UNICORN);
-        blue_1.setText(":"+match.getLands().get(1).getInfluence(temp));
-        blue_2.setText(":"+match.getLands().get(2).getInfluence(temp));
-        blue_3.setText(":"+match.getLands().get(3).getInfluence(temp));
-        blue_4.setText(":"+match.getLands().get(4).getInfluence(temp));
-        blue_5.setText(":"+match.getLands().get(5).getInfluence(temp));
-        blue_7.setText(":"+match.getLands().get(7).getInfluence(temp));
-        blue_8.setText(":"+match.getLands().get(8).getInfluence(temp));
-        blue_9.setText(":"+match.getLands().get(9).getInfluence(temp));
-        blue_10.setText(":"+match.getLands().get(10).getInfluence(temp));
-        blue_11.setText(":"+match.getLands().get(11).getInfluence(temp));
-        temp.remove(0);
-        temp.add(Type_Student.FROG);
-        green_1.setText(":"+match.getLands().get(1).getInfluence(temp));
-        green_2.setText(":"+match.getLands().get(2).getInfluence(temp));
-        green_3.setText(":"+match.getLands().get(3).getInfluence(temp));
-        green_4.setText(":"+match.getLands().get(4).getInfluence(temp));
-        green_5.setText(":"+match.getLands().get(5).getInfluence(temp));
-        green_7.setText(":"+match.getLands().get(7).getInfluence(temp));
-        green_8.setText(":"+match.getLands().get(8).getInfluence(temp));
-        green_9.setText(":"+match.getLands().get(9).getInfluence(temp));
-        green_10.setText(":"+match.getLands().get(10).getInfluence(temp));
-        green_11.setText(":"+match.getLands().get(11).getInfluence(temp));
-        temp.remove(0);
-        temp.add(Type_Student.FAIRIE);
-        pink_1.setText(":"+match.getLands().get(1).getInfluence(temp));
-        pink_2.setText(":"+match.getLands().get(2).getInfluence(temp));
-        pink_3.setText(":"+match.getLands().get(3).getInfluence(temp));
-        pink_4.setText(":"+match.getLands().get(4).getInfluence(temp));
-        pink_5.setText(":"+match.getLands().get(5).getInfluence(temp));
-        pink_7.setText(":"+match.getLands().get(7).getInfluence(temp));
-        pink_8.setText(":"+match.getLands().get(8).getInfluence(temp));
-        pink_9.setText(":"+match.getLands().get(9).getInfluence(temp));
-        pink_10.setText(":"+match.getLands().get(10).getInfluence(temp));
-        pink_11.setText(":"+match.getLands().get(11).getInfluence(temp));
-        temp.remove(0);
-        temp.add(Type_Student.GNOME);
-        yellow_1.setText(":"+match.getLands().get(1).getInfluence(temp));
-        yellow_2.setText(":"+match.getLands().get(2).getInfluence(temp));
-        yellow_3.setText(":"+match.getLands().get(3).getInfluence(temp));
-        yellow_4.setText(":"+match.getLands().get(4).getInfluence(temp));
-        yellow_5.setText(":"+match.getLands().get(5).getInfluence(temp));
-        yellow_7.setText(":"+match.getLands().get(7).getInfluence(temp));
-        yellow_8.setText(":"+match.getLands().get(8).getInfluence(temp));
-        yellow_9.setText(":"+match.getLands().get(9).getInfluence(temp));
-        yellow_10.setText(":"+match.getLands().get(10).getInfluence(temp));
-        yellow_11.setText(":"+match.getLands().get(11).getInfluence(temp));
+        for (int i = 0; i < 12; i++) {
+            show_islands(i);
+        }
+        File f=new File("untitled/src/main/resources/wooden_pieces/wooden_pieces/student_red.png");
+        try {
+            red_student=new FileInputStream(f);
+            f=new File("untitled/src/main/resources/wooden_pieces/wooden_pieces/student_yellow.png");
+            yellow_student=new FileInputStream(f);
+            f=new File("untitled/src/main/resources/wooden_pieces/wooden_pieces/student_blue.png");
+            blue_student=new FileInputStream(f);
+            f=new File("untitled/src/main/resources/wooden_pieces/wooden_pieces/student_pink.png");
+            pink_student=new FileInputStream(f);
+            f=new File("untitled/src/main/resources/wooden_pieces/wooden_pieces/student_green.png");
+            green_student=new FileInputStream(f);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        if(match.getPlayer().length==2){
+            cloud_for_three_player.setVisible(false);
+        }
+        show_cloud();
+        for (int i = 0; i < match.getPlayer().length; i++) {
+            switch (i) {
+                case 0 -> show_wizard(wizard0, match.getPlayer()[0].getWizard());
+                case 1 -> show_wizard(wizard1, match.getPlayer()[1].getWizard());
+                case 2 -> show_wizard(wizard2, match.getPlayer()[2].getWizard());
+            }
+        }
+        if(!(match instanceof Expert_Match)){
+            coin0.setVisible(false);
+            coin1.setVisible(false);
+            coin2.setVisible(false);
+            ncoin0.setVisible(false);
+            ncoin1.setVisible(false);
+            ncoin2.setVisible(false);
+        }
     }
 
     public void moveto(MouseEvent mouseEvent) {
@@ -747,12 +773,19 @@ public class MatchController{
     private void show_towers(int i){
         Player pl=match.getPlayer()[i];
         Image colored_tower=null;
+        File f=null;
         switch (pl.getColor()){
-            case GREY -> colored_tower=new Image("file:wooden_pieces/wooden_pieces/grey_tower.png");
-            case BLACK -> colored_tower=new Image("file:src/main/resources/wooden_pieces/wooden_pieces/black_tower.png");
-            case WHITE -> colored_tower=new Image("file:wooden_pieces/wooden_pieces/white_tower.png");
+            case GREY -> f=new File("untitled/src/main/resources/wooden_pieces/wooden_pieces/grey_tower.png");
+            case BLACK -> f=new File("untitled/src/main/resources/wooden_pieces/wooden_pieces/black_tower.png");
+            case WHITE -> f=new File("untitled/src/main/resources/wooden_pieces/wooden_pieces/white_tower.png");
         }
-
+        FileInputStream fis=null;
+        try {
+            fis=new FileInputStream(f);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        colored_tower=new Image(fis);
         switch (i) {
             case 0 -> {
                 tower00.setImage(colored_tower);
@@ -974,6 +1007,7 @@ public class MatchController{
             show(i);
             show_towers(i);
         }
+        show_entry();
         for (AssistantCard a: me.getDeck()) {
             if(a.getValue()==1) {
                 assistant0.setVisible(true);
@@ -1574,6 +1608,7 @@ public class MatchController{
         for (int i = 0; i < 12; i++) {
             show_islands(i);
         }
+        show_cloud();
     }
 
     public void selectmn(MouseEvent mouseEvent) {
@@ -1589,7 +1624,112 @@ public class MatchController{
         }
     }
 
-
+    private void show_entry(){
+        for (int i = 0; i < match.getPlayer().length; i++) {
+            ArrayList<Student> entrance=match.getPlayer()[i].getBoard().getEntrance();
+            switch (i){
+                case 0: {
+                    if (!entrance.isEmpty()) {
+                        show_student(entry00, entrance.get(0));
+                        show_student(entry01, entrance.get(1));
+                        show_student(entry02, entrance.get(2));
+                        show_student(entry03, entrance.get(3));
+                        if (entrance.size() >= 5) {
+                            show_student(entry04, entrance.get(4));
+                        }
+                        if (entrance.size() >= 6) {
+                            show_student(entry05, entrance.get(5));
+                        }
+                        if (entrance.size() >= 7) {
+                            show_student(entry06, entrance.get(6));
+                        }
+                        if (entrance.size() >= 8) {
+                            show_student(entry07, entrance.get(7));
+                        }
+                        if (entrance.size() >= 9) {
+                            show_student(entry08, entrance.get(8));
+                        }
+                    } else {
+                        entry00.setVisible(false);
+                        entry01.setVisible(false);
+                        entry02.setVisible(false);
+                        entry03.setVisible(false);
+                        entry04.setVisible(false);
+                        entry05.setVisible(false);
+                        entry06.setVisible(false);
+                        entry07.setVisible(false);
+                        entry08.setVisible(false);
+                    }
+                }
+                case 1:{
+                    if (!entrance.isEmpty()) {
+                        show_student(entry10, entrance.get(0));
+                        show_student(entry11, entrance.get(1));
+                        show_student(entry12, entrance.get(2));
+                        show_student(entry13, entrance.get(3));
+                        if (entrance.size() >= 5) {
+                            show_student(entry14, entrance.get(4));
+                        }
+                        if (entrance.size() >= 6) {
+                            show_student(entry15, entrance.get(5));
+                        }
+                        if (entrance.size() >= 7) {
+                            show_student(entry16, entrance.get(6));
+                        }
+                        if (entrance.size() >= 8) {
+                            show_student(entry17, entrance.get(7));
+                        }
+                        if (entrance.size() >= 9) {
+                            show_student(entry18, entrance.get(8));
+                        }
+                    } else {
+                        entry10.setVisible(false);
+                        entry11.setVisible(false);
+                        entry12.setVisible(false);
+                        entry13.setVisible(false);
+                        entry14.setVisible(false);
+                        entry15.setVisible(false);
+                        entry16.setVisible(false);
+                        entry17.setVisible(false);
+                        entry18.setVisible(false);
+                    }
+                }
+                case 2:{
+                    if (!entrance.isEmpty()) {
+                        show_student(entry20, entrance.get(0));
+                        show_student(entry21, entrance.get(1));
+                        show_student(entry22, entrance.get(2));
+                        show_student(entry23, entrance.get(3));
+                        if (entrance.size() >= 5) {
+                            show_student(entry24, entrance.get(4));
+                        }
+                        if (entrance.size() >= 6) {
+                            show_student(entry25, entrance.get(5));
+                        }
+                        if (entrance.size() >= 7) {
+                            show_student(entry26, entrance.get(6));
+                        }
+                        if (entrance.size() >= 8) {
+                            show_student(entry27, entrance.get(7));
+                        }
+                        if (entrance.size() >= 9) {
+                            show_student(entry28, entrance.get(8));
+                        }
+                    } else {
+                        entry20.setVisible(false);
+                        entry21.setVisible(false);
+                        entry22.setVisible(false);
+                        entry23.setVisible(false);
+                        entry24.setVisible(false);
+                        entry25.setVisible(false);
+                        entry26.setVisible(false);
+                        entry27.setVisible(false);
+                        entry28.setVisible(false);
+                    }
+                }
+            }
+        }
+    }
 
     public void selectfromentry(MouseEvent mouseEvent) {
         switch (((ImageView) mouseEvent.getSource()).getId()) {
@@ -1637,5 +1777,192 @@ public class MatchController{
 
     public static void setIn(ObjectInputStream i) {in = i;}
 
+    @Override
+    public void run() {
+        Runnable updater=new Runnable(){
+            @Override
+            public void run() {
+                if(land_view.isVisible()){
+                    for (int i = 0; i < 12; i++) {
+                        show_islands(i);
+                        show_cloud();
+                    }
+                }else{
+                    for (int i = 0; i < match.getPlayer().length; i++) {
+                        show(i);
+                        show_towers(i);
+                    }
+                    show_entry();
+                    for (AssistantCard a: me.getDeck()) {
+                        if(a.getValue()==1) {
+                            assistant0.setVisible(true);
+                            break;
+                        }
+                    }
+                    for (AssistantCard a: me.getDeck()) {
+                        if(a.getValue()==2) {
+                            assistant1.setVisible(true);
+                            break;
+                        }
+                    }
+                    for (AssistantCard a: me.getDeck()) {
+                        if(a.getValue()==3) {
+                            assistant2.setVisible(true);
+                            break;
+                        }
+                    }
+                    for (AssistantCard a: me.getDeck()) {
+                        if(a.getValue()==4) {
+                            assistant3.setVisible(true);
+                            break;
+                        }
+                    }
+                    for (AssistantCard a: me.getDeck()) {
+                        if(a.getValue()==5) {
+                            assistant4.setVisible(true);
+                            break;
+                        }
+                    }
+                    for (AssistantCard a: me.getDeck()) {
+                        if(a.getValue()==6) {
+                            assistant5.setVisible(true);
+                            break;
+                        }
+                    }
+                    for (AssistantCard a: me.getDeck()) {
+                        if(a.getValue()==7) {
+                            assistant6.setVisible(true);
+                            break;
+                        }
+                    }
+                    for (AssistantCard a: me.getDeck()) {
+                        if(a.getValue()==8) {
+                            assistant7.setVisible(true);
+                            break;
+                        }
+                    }
+                    for (AssistantCard a: me.getDeck()) {
+                        if(a.getValue()==9) {
+                            assistant8.setVisible(true);
+                            break;
+                        }
+                    }
+                    for (AssistantCard a: me.getDeck()) {
+                        if (a.getValue() == 10) {
+                            assistant9.setVisible(true);
+                            break;
+                        }
+                    }
+                }
+            }
+        };
+        while(true){
+            try {
+                Thread.sleep(3000);
+            }catch (InterruptedException e){
+                e.printStackTrace();
+            }
+            Platform.runLater(updater);
+        }
+    }
 
+    public static Match getMatch() {
+        return match;
+    }
+
+    private void show_student(ImageView imageView,Student student){
+        try {
+            switch (student.type()){
+                case GNOME -> {
+                    imageView.setImage(new Image(yellow_student));
+                    File f=new File("untitled/src/main/resources/wooden_pieces/wooden_pieces/student_yellow.png");
+                    yellow_student=new FileInputStream(f);
+                }
+                case FAIRIE -> {
+                    imageView.setImage(new Image(pink_student));
+                    File f=new File("untitled/src/main/resources/wooden_pieces/wooden_pieces/student_pink.png");
+                    pink_student=new FileInputStream(f);
+                }
+                case FROG -> {
+                    imageView.setImage(new Image(green_student));
+                    File f=new File("untitled/src/main/resources/wooden_pieces/wooden_pieces/student_green.png");
+                    green_student=new FileInputStream(f);
+                }
+                case UNICORN -> {
+                    imageView.setImage(new Image(blue_student));
+                    File f=new File("untitled/src/main/resources/wooden_pieces/wooden_pieces/student_blue.png");
+                    blue_student=new FileInputStream(f);
+                }
+                case DRAGON -> {
+                    imageView.setImage(new Image(red_student));
+                    File f=new File("untitled/src/main/resources/wooden_pieces/wooden_pieces/student_red.png");
+                    red_student=new FileInputStream(f);
+                }
+            }
+            imageView.setVisible(true);
+        }catch (Exception e) {
+            imageView.setVisible(false);
+        }
+    }
+
+    private void show_cloud(){
+        for (int i = 0; i < match.getPlayer().length; i++) {
+            switch (i) {
+                case 0 -> {
+                    show_student(cloudstudent00, match.getCloud()[0].getStudents().get(0));
+                    show_student(cloudstudent01, match.getCloud()[0].getStudents().get(1));
+                    show_student(cloudstudent02, match.getCloud()[0].getStudents().get(2));
+                    if (match.getPlayer().length == 3)
+                        show_student(cloudstudent03, match.getCloud()[0].getStudents().get(3));
+                    else
+                        cloudstudent03.setVisible(false);
+                }
+                case 1 ->{
+                    show_student(cloudstudent10, match.getCloud()[1].getStudents().get(0));
+                    show_student(cloudstudent11, match.getCloud()[1].getStudents().get(1));
+                    show_student(cloudstudent12, match.getCloud()[1].getStudents().get(2));
+                    if (match.getPlayer().length == 3)
+                        show_student(cloudstudent13, match.getCloud()[1].getStudents().get(3));
+                    else
+                        cloudstudent13.setVisible(false);
+                }
+                case 2 ->{
+                    show_student(cloudstudent20, match.getCloud()[2].getStudents().get(0));
+                    show_student(cloudstudent21, match.getCloud()[2].getStudents().get(1));
+                    show_student(cloudstudent22, match.getCloud()[2].getStudents().get(2));
+                    show_student(cloudstudent23, match.getCloud()[2].getStudents().get(3));
+                }
+            }
+        }
+    }
+
+    private void show_wizard(ImageView imageView,Wizards wizards){
+        try {
+            switch (wizards) {
+                case WIZARD1 -> {
+                    File f = new File("untitled/src/main/resources/Graphical_Assets/Assistenti/retro/CarteTOT_back_1@3x.png");
+                    FileInputStream fis = new FileInputStream(f);
+                    imageView.setImage(new Image(fis));
+                }
+                case WIZARD2 -> {
+                    File f = new File("untitled/src/main/resources/Graphical_Assets/Assistenti/retro/CarteTOT_back_11@3x.png");
+                    FileInputStream fis = new FileInputStream(f);
+                    imageView.setImage(new Image(fis));
+                }
+                case WIZARD3 -> {
+                    File f = new File("untitled/src/main/resources/Graphical_Assets/Assistenti/retro/CarteTOT_back_21@3x.png");
+                    FileInputStream fis = new FileInputStream(f);
+                    imageView.setImage(new Image(fis));
+                }
+                case WIZARD4 -> {
+                    File f = new File("untitled/src/main/resources/Graphical_Assets/Assistenti/retro/CarteTOT_back_31@3x.png");
+                    FileInputStream fis = new FileInputStream(f);
+                    imageView.setImage(new Image(fis));
+                }
+            }
+            imageView.setRotate(90);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 }
