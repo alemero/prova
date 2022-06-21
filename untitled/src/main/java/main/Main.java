@@ -2,7 +2,6 @@ package main;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import main.client.Action;
@@ -43,13 +42,13 @@ public class Main extends Application {
                 e.printStackTrace();
             }
         }
-        /*for (int i = 0; i < 9; i++) {
+        for (int i = 0; i < 9; i++) {
             try {
-                System.out.println(p.getBoard().getEntrance().get(i).toString());
+                p.getBoard().placeStudent(p.getBoard().getEntrance().get(0));
             } catch (Exception e) {
                 e.printStackTrace();
             }
-        }*/
+        }
         MatchController.setMatch(m);
         MatchController.setMe(p);
         MatchController.setAction(new Action(m));
@@ -65,7 +64,7 @@ public class Main extends Application {
         Thread thread=new Thread((MatchController)fxmlLoader.getController());
         thread.setDaemon(true);
         thread.start();
-        /*Thread th=new Thread(new Runnable() {
+        Thread th=new Thread(new Runnable() {
             @Override
             public void run() {
                 synchronized (this) {
@@ -78,7 +77,7 @@ public class Main extends Application {
                 MatchController.getMatch().getLands().get(6).addStudent(new Student(Type_Student.DRAGON));
             }
         });
-        th.start();*/
+        th.start();
     }   
 
     public static void main(String[] args) {
