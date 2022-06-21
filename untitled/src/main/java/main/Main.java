@@ -73,7 +73,15 @@ public class Main extends Application {
                         e.printStackTrace();
                     }
                 }
-                MatchController.getMatch().getLands().get(6).addStudent(new Student(Type_Student.DRAGON));
+                ArrayList<Tower> temp=new ArrayList<>();
+                temp.add(p.getBoard().getTowers().get(1));
+                try {
+                    MatchController.getMatch().getLands().get(1).changeTower(temp);
+                    MatchController.getMatch().getLands().get(0).changeTower(temp);
+                    MatchController.getMatch().uniteLandBefore(1);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         });
         th.start();
