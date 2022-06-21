@@ -1767,7 +1767,9 @@ public class MatchController extends Thread implements View{
 
     }
 
-    public void setMatch(Match m) {
+
+    @Override
+    public static void setMatch(Match m) {
         match = m;
     }
 

@@ -1,14 +1,13 @@
 package main.client;
 
 import main.model.*;
+import main.model.characterCards.*;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.util.*;
 import java.util.List;
 
 
-import static java.lang.Integer.parseInt;
 
 public class Cli extends Thread implements View{
     private final Scanner input;

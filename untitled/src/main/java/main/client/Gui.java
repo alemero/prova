@@ -11,7 +11,7 @@ import main.model.*;
 import java.io.IOException;
 import java.util.List;
 
-public class Gui extends Application implements View {
+public class Gui extends Thread implements View {
     Stage stage;
 
     public Gui(Stage stage) {
@@ -69,8 +69,8 @@ public class Gui extends Application implements View {
     }
 
     @Override
-    public String getDestination(Match match) {
-        return null;
+    public int getDestination(Match match) {
+        return 0;
     }
 
     @Override
@@ -140,7 +140,7 @@ public class Gui extends Application implements View {
     }
 
     @Override
-    public String chooseMatch(List<String> join, List<String> resume) {
+    public void chooseMatch(List<String> join, List<String> resume) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("selection_game.fxml"));
         Scene scene=null;
         try {
@@ -150,7 +150,6 @@ public class Gui extends Application implements View {
         }
         stage.setScene(scene);
         stage.show();
-        return null;
     }
 
     @Override
@@ -214,20 +213,5 @@ public class Gui extends Application implements View {
     }
 
 
-    @Override
-    public void start(Stage stage) throws IOException {
-        View gui=new Gui(stage);
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getClassLoader().getResource("prima_app.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Eriantys");
-        MainController.setGui(gui);
-        stage.setScene(scene);
-        stage.sizeToScene();
-        stage.show();
-        MainController a=new MainController();
-    }
 
-    public static void main(String[] args) {
-        launch(args);
-    }
 }
