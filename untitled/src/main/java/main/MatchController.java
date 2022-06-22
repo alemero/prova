@@ -4,6 +4,7 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -15,6 +16,7 @@ import main.client.Action;
 import main.client.Message4Server;
 import main.model.*;
 import main.client.View;
+import main.model.characterCards.*;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -572,6 +574,17 @@ public class MatchController extends Thread implements View{
     ImageView coin2;
     @FXML
     ImageView coin0;
+    @FXML
+    ImageView ch0;
+    @FXML
+    ImageView ch1;
+    @FXML
+    ImageView ch2;
+    @FXML
+    Pane characters;
+    @FXML
+    Button character_button;
+
 
 
     public void initialize(){
@@ -657,6 +670,11 @@ public class MatchController extends Thread implements View{
             ncoin0.setVisible(false);
             ncoin1.setVisible(false);
             ncoin2.setVisible(false);
+            character_button.setVisible(false);
+        }else{
+            character(ch0,((Expert_Match)match).getCard()[0]);
+            character(ch1,((Expert_Match)match).getCard()[1]);
+            character(ch2,((Expert_Match)match).getCard()[2]);
         }
     }
 
@@ -747,10 +765,14 @@ public class MatchController extends Thread implements View{
                             action.moveFromIngressToLand(me,assistantchoosen,l);
                     }
                 }
+                action.checkAllProfessors();
             }
         }
         selectedstudent=false;
         selectedmn=false;
+        synchronized (this) {
+            notifyAll();
+        }
     }
 
 
@@ -759,15 +781,21 @@ public class MatchController extends Thread implements View{
             case "cloud0" -> {
                 action.chooseCloud(me, match.getCloud()[0]);
                 server.sendChoiceCloud(match.getCloud()[0]);
+                match.getCloud()[0].clearStudents();
             }
             case "cloud1" -> {
                 action.chooseCloud(me, match.getCloud()[1]);
                 server.sendChoiceCloud(match.getCloud()[1]);
+                match.getCloud()[1].clearStudents();
             }
             case "cloud2" -> {
                 action.chooseCloud(me, match.getCloud()[2]);
                 server.sendChoiceCloud(match.getCloud()[2]);
+                match.getCloud()[2].clearStudents();
             }
+        }
+        synchronized (this) {
+            notifyAll();
         }
     }
 
@@ -1004,6 +1032,7 @@ public class MatchController extends Thread implements View{
     public void show_boards(ActionEvent actionEvent) {
         land_view.setVisible(false);
         board_view.setVisible(true);
+        characters.setVisible(false);
         for (int i = 0; i < match.getPlayer().length; i++) {
             show(i);
             show_towers(i);
@@ -1096,7 +1125,7 @@ public class MatchController extends Thread implements View{
                     if(a.getValue()==3){
                         server.sendChosenCard(a);
                         me.draw(a);
-                        assistant1.setVisible(false);
+                        assistant2.setVisible(false);
                     }
                 }
                 break;
@@ -1105,7 +1134,7 @@ public class MatchController extends Thread implements View{
                     if(a.getValue()==4){
                         server.sendChosenCard(a);
                         me.draw(a);
-                        assistant1.setVisible(false);
+                        assistant3.setVisible(false);
                     }
                 }
                 break;
@@ -1114,7 +1143,7 @@ public class MatchController extends Thread implements View{
                     if(a.getValue()==5){
                         server.sendChosenCard(a);
                         me.draw(a);
-                        assistant1.setVisible(false);
+                        assistant4.setVisible(false);
                     }
                 }
                 break;
@@ -1123,7 +1152,7 @@ public class MatchController extends Thread implements View{
                     if(a.getValue()==6){
                         server.sendChosenCard(a);
                         me.draw(a);
-                        assistant1.setVisible(false);
+                        assistant5.setVisible(false);
                     }
                 }
                 break;
@@ -1132,7 +1161,7 @@ public class MatchController extends Thread implements View{
                     if(a.getValue()==7){
                         server.sendChosenCard(a);
                         me.draw(a);
-                        assistant1.setVisible(false);
+                        assistant6.setVisible(false);
                     }
                 }
                 break;
@@ -1141,7 +1170,7 @@ public class MatchController extends Thread implements View{
                     if(a.getValue()==8){
                         server.sendChosenCard(a);
                         me.draw(a);
-                        assistant1.setVisible(false);
+                        assistant7.setVisible(false);
                     }
                 }
                 break;
@@ -1150,7 +1179,7 @@ public class MatchController extends Thread implements View{
                     if(a.getValue()==9){
                         server.sendChosenCard(a);
                         me.draw(a);
-                        assistant1.setVisible(false);
+                        assistant8.setVisible(false);
                     }
                 }
                 break;
@@ -1159,7 +1188,7 @@ public class MatchController extends Thread implements View{
                     if(a.getValue()==10){
                         server.sendChosenCard(a);
                         me.draw(a);
-                        assistant1.setVisible(false);
+                        assistant9.setVisible(false);
                     }
                 }
                 break;
@@ -1606,6 +1635,7 @@ public class MatchController extends Thread implements View{
     public void go_to_island(ActionEvent actionEvent) {
         board_view.setVisible(false);
         land_view.setVisible(true);
+        characters.setVisible(false);
         for (int i = 0; i < 12; i++) {
             show_islands(i);
         }
@@ -1922,8 +1952,8 @@ public class MatchController extends Thread implements View{
     }
 
     @Override
-    public void wakeUp(String state) {
-
+    public synchronized void wakeUp(String state) {
+       notifyAll();
     }
 
     @Override
@@ -1954,6 +1984,16 @@ public class MatchController extends Thread implements View{
                         show_towers(i);
                     }
                     show_entry();
+                    assistant0.setVisible(false);
+                    assistant1.setVisible(false);
+                    assistant2.setVisible(false);
+                    assistant3.setVisible(false);
+                    assistant4.setVisible(false);
+                    assistant5.setVisible(false);
+                    assistant6.setVisible(false);
+                    assistant7.setVisible(false);
+                    assistant8.setVisible(false);
+                    assistant9.setVisible(false);
                     for (AssistantCard a: me.getDeck()) {
                         if(a.getValue()==1) {
                             assistant0.setVisible(true);
@@ -2019,7 +2059,9 @@ public class MatchController extends Thread implements View{
         };
         while(true){
             try {
-                Thread.sleep(3000);
+                synchronized (this){
+                    wait();
+                }
             }catch (InterruptedException e){
                 e.printStackTrace();
             }
@@ -2070,28 +2112,49 @@ public class MatchController extends Thread implements View{
         for (int i = 0; i < match.getPlayer().length; i++) {
             switch (i) {
                 case 0 -> {
-                    show_student(cloudstudent00, match.getCloud()[0].getStudents().get(0));
-                    show_student(cloudstudent01, match.getCloud()[0].getStudents().get(1));
-                    show_student(cloudstudent02, match.getCloud()[0].getStudents().get(2));
-                    if (match.getPlayer().length == 3)
-                        show_student(cloudstudent03, match.getCloud()[0].getStudents().get(3));
-                    else
+                    if(!match.getCloud()[0].getStudents().isEmpty()) {
+                        show_student(cloudstudent00, match.getCloud()[0].getStudents().get(0));
+                        show_student(cloudstudent01, match.getCloud()[0].getStudents().get(1));
+                        show_student(cloudstudent02, match.getCloud()[0].getStudents().get(2));
+                        if (match.getPlayer().length == 3)
+                            show_student(cloudstudent03, match.getCloud()[0].getStudents().get(3));
+                        else
+                            cloudstudent03.setVisible(false);
+                    }else{
+                        cloudstudent00.setVisible(false);
+                        cloudstudent01.setVisible(false);
+                        cloudstudent02.setVisible(false);
                         cloudstudent03.setVisible(false);
+                    }
                 }
                 case 1 ->{
-                    show_student(cloudstudent10, match.getCloud()[1].getStudents().get(0));
-                    show_student(cloudstudent11, match.getCloud()[1].getStudents().get(1));
-                    show_student(cloudstudent12, match.getCloud()[1].getStudents().get(2));
-                    if (match.getPlayer().length == 3)
-                        show_student(cloudstudent13, match.getCloud()[1].getStudents().get(3));
-                    else
+                    if(!match.getCloud()[1].getStudents().isEmpty()) {
+                        show_student(cloudstudent10, match.getCloud()[1].getStudents().get(0));
+                        show_student(cloudstudent11, match.getCloud()[1].getStudents().get(1));
+                        show_student(cloudstudent12, match.getCloud()[1].getStudents().get(2));
+                        if (match.getPlayer().length == 3)
+                            show_student(cloudstudent13, match.getCloud()[1].getStudents().get(3));
+                        else
+                            cloudstudent13.setVisible(false);
+                    }else{
+                        cloudstudent10.setVisible(false);
+                        cloudstudent11.setVisible(false);
+                        cloudstudent12.setVisible(false);
                         cloudstudent13.setVisible(false);
+                    }
                 }
                 case 2 ->{
-                    show_student(cloudstudent20, match.getCloud()[2].getStudents().get(0));
-                    show_student(cloudstudent21, match.getCloud()[2].getStudents().get(1));
-                    show_student(cloudstudent22, match.getCloud()[2].getStudents().get(2));
-                    show_student(cloudstudent23, match.getCloud()[2].getStudents().get(3));
+                    if(!match.getCloud()[2].getStudents().isEmpty()) {
+                        show_student(cloudstudent20, match.getCloud()[2].getStudents().get(0));
+                        show_student(cloudstudent21, match.getCloud()[2].getStudents().get(1));
+                        show_student(cloudstudent22, match.getCloud()[2].getStudents().get(2));
+                        show_student(cloudstudent23, match.getCloud()[2].getStudents().get(3));
+                    }else{
+                        cloudstudent20.setVisible(false);
+                        cloudstudent21.setVisible(false);
+                        cloudstudent22.setVisible(false);
+                        cloudstudent23.setVisible(false);
+                    }
                 }
             }
         }
@@ -2127,5 +2190,70 @@ public class MatchController extends Thread implements View{
         }
     }
 
+    private void character(ImageView imageView,CharacterCard character){
+        File f;
+        FileInputStream fil;
+        try {
+            if (character instanceof Ch_1) {
+                f = new File("untitled/src/main/resources/Graphical_Assets/Personaggi/CarteTOT_front.jpg");
+                fil = new FileInputStream(f);
+                imageView.setImage(new Image(fil));
+            }else if(character instanceof Ch_2){
+                f = new File("untitled/src/main/resources/Graphical_Assets/Personaggi/CarteTOT_front2.jpg");
+                fil = new FileInputStream(f);
+                imageView.setImage(new Image(fil));
+            }else if(character instanceof Ch_3){
+                f = new File("untitled/src/main/resources/Graphical_Assets/Personaggi/CarteTOT_front3.jpg");
+                fil = new FileInputStream(f);
+                imageView.setImage(new Image(fil));
+            }else if(character instanceof Ch_4){
+                f = new File("untitled/src/main/resources/Graphical_Assets/Personaggi/CarteTOT_front4.jpg");
+                fil = new FileInputStream(f);
+                imageView.setImage(new Image(fil));
+            }else if(character instanceof Ch_5){
+                f = new File("untitled/src/main/resources/Graphical_Assets/Personaggi/CarteTOT_front5.jpg");
+                fil = new FileInputStream(f);
+                imageView.setImage(new Image(fil));
+            }else if(character instanceof Ch_6){
+                f = new File("untitled/src/main/resources/Graphical_Assets/Personaggi/CarteTOT_front6.jpg");
+                fil = new FileInputStream(f);
+                imageView.setImage(new Image(fil));
+            }else if(character instanceof Ch_7){
+                f = new File("untitled/src/main/resources/Graphical_Assets/Personaggi/CarteTOT_front7.jpg");
+                fil = new FileInputStream(f);
+                imageView.setImage(new Image(fil));
+            }else if(character instanceof Ch_8){
+                f = new File("untitled/src/main/resources/Graphical_Assets/Personaggi/CarteTOT_front8.jpg");
+                fil = new FileInputStream(f);
+                imageView.setImage(new Image(fil));
+            }else if(character instanceof Ch_9){
+                f = new File("untitled/src/main/resources/Graphical_Assets/Personaggi/CarteTOT_front9.jpg");
+                fil = new FileInputStream(f);
+                imageView.setImage(new Image(fil));
+            }else if(character instanceof Ch_10){
+                f = new File("untitled/src/main/resources/Graphical_Assets/Personaggi/CarteTOT_front10.jpg");
+                fil = new FileInputStream(f);
+                imageView.setImage(new Image(fil));
+            }else if(character instanceof Ch_11){
+                f = new File("untitled/src/main/resources/Graphical_Assets/Personaggi/CarteTOT_front11.jpg");
+                fil = new FileInputStream(f);
+                imageView.setImage(new Image(fil));
+            }else if(character instanceof Ch_12){
+                f = new File("untitled/src/main/resources/Graphical_Assets/Personaggi/CarteTOT_front12.jpg");
+                fil = new FileInputStream(f);
+                imageView.setImage(new Image(fil));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
+    public void use_ch(MouseEvent mouseEvent) {
+    }
+
+    public void show_characters(ActionEvent actionEvent) {
+        land_view.setVisible(false);
+        board_view.setVisible(false);
+        characters.setVisible(true);
+    }
 }

@@ -11,14 +11,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #87cefa;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MatchController">
+<AnchorPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" style="-fx-background-color: #87cefa;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MatchController">
    <ImageView fitHeight="720.0" fitWidth="1080.0" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@sfondo.jpg" />
       </image>
    </ImageView>
-    <Pane fx:id="land_view">
-        <AnchorPane fx:id="land3" layoutX="600.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="251.0">
+    <Pane fx:id="land_view" prefHeight="719.0" prefWidth="1080.0">
+        <AnchorPane fx:id="land3" layoutX="600.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="251.0">
             <ImageView fx:id="island3" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="10.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
                 <Image url="@wooden_pieces/wooden_pieces/island1.png" />
             <effect>
@@ -81,7 +81,7 @@
                 </font>
             </Label>
         </AnchorPane>
-        <AnchorPane fx:id="land1" layoutX="186.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="279.0">
+        <AnchorPane fx:id="land1" layoutX="190.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="279.0">
             <ImageView fx:id="island1" fitHeight="205.0" fitWidth="227.0" layoutX="24.0" layoutY="2.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
                 <Image url="@wooden_pieces/wooden_pieces/island1.png" />
             <effect>
@@ -144,7 +144,7 @@
                 </font>
             </Label>
         </AnchorPane>
-        <AnchorPane fx:id="land2" layoutX="400.0" layoutY="6.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="262.0">
+        <AnchorPane fx:id="land2" layoutX="400.0" layoutY="20.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="262.0">
             <ImageView fx:id="island2" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="10.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
                 <Image url="@wooden_pieces/wooden_pieces/island1.png" />
             <effect>
@@ -459,7 +459,7 @@
                 </font>
             </Label>
         </AnchorPane>
-        <AnchorPane fx:id="land0" layoutX="-13.0" layoutY="71.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
+        <AnchorPane fx:id="land0" layoutX="-13.0" layoutY="85.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
             <ImageView fx:id="island0" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="10.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
                 <Image url="@wooden_pieces/wooden_pieces/island1.png" />
             <effect>
@@ -522,7 +522,7 @@
                 </font>
             </Label>
         </AnchorPane>
-        <AnchorPane fx:id="land4" layoutX="800.0" layoutY="85.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="291.0">
+        <AnchorPane fx:id="land4" layoutX="805.0" layoutY="85.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="218.0" prefWidth="293.0">
             <ImageView fx:id="island4" fitHeight="205.0" fitWidth="227.0" layoutX="25.0" layoutY="10.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
                 <Image url="@wooden_pieces/wooden_pieces/island1.png" />
             <effect>
@@ -832,7 +832,7 @@
             </effect>
             </ImageView>
         </AnchorPane>
-        <AnchorPane layoutX="594.0" layoutY="234.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="178.0" prefWidth="251.0">
+        <AnchorPane layoutX="594.0" layoutY="241.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="171.0" prefWidth="136.0">
             <ImageView fx:id="cloud1" fitHeight="119.0" fitWidth="105.0" layoutX="16.0" layoutY="44.0" onMouseClicked="#choose_cloud" pickOnBounds="true" preserveRatio="true">
                 <Image url="@wooden_pieces/wooden_pieces/cloud_card.png" />
             </ImageView>
@@ -861,7 +861,7 @@
             </effect>
             </ImageView>
         </AnchorPane>
-        <Button layoutX="971.0" mnemonicParsing="false" onAction="#show_boards" prefHeight="70.0" prefWidth="110.0" snapToPixel="false" style="-fx-background-color: orange; -fx-background-radius: 100;" text="sale" textFill="#080808">
+        <Button layoutX="971.0" mnemonicParsing="false" onAction="#show_boards" prefHeight="70.0" prefWidth="110.0" snapToPixel="false" style="-fx-background-color: orange; -fx-background-radius: 100;" text="Sale" textFill="#080808">
             <font>
                 <Font name="Onyx" size="36.0" />
             </font>
@@ -869,8 +869,21 @@
             <InnerShadow height="65.0" radius="33.0" width="69.0" />
          </effect>
         </Button>
+      <Label fx:id="state" layoutX="330.0" prefHeight="24.0" prefWidth="400.0" text="Tocca a... in fase di..." textAlignment="CENTER">
+         <font>
+            <Font name="Lucida Calligraphy Italic" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="character_button" mnemonicParsing="false" onAction="#show_characters" prefHeight="70.0" prefWidth="148.0" snapToPixel="false" style="-fx-background-color: orange; -fx-background-radius: 100;" text="Personaggi" textFill="#080808">
+         <font>
+            <Font name="Onyx" size="36.0" />
+         </font>
+         <effect>
+            <InnerShadow height="65.0" radius="33.0" width="69.0" />
+         </effect>
+      </Button>
     </Pane>
-    <Pane fx:id="board_view" visible="false">
+    <Pane fx:id="board_view" prefHeight="720.0" prefWidth="1080.0" visible="false">
         <AnchorPane layoutX="-121.0" layoutY="92.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="339.0" prefWidth="581.0" rotate="-90.0">
             <ImageView fx:id="board0" fitHeight="220.0" fitWidth="500.0" layoutX="50.0" layoutY="102.0" onMouseClicked="#moveto" pickOnBounds="true" preserveRatio="true">
                 <Image url="@Graphical_Assets/Plancia/Plancia_DEF2.png" />
@@ -1822,4 +1835,37 @@
             </effect></Button>
         </AnchorPane>
     </Pane>
+   <Pane fx:id="characters" prefHeight="720.0" prefWidth="1080.0" visible="false">
+      <children>
+         <ImageView fx:id="ch0" fitHeight="344.0" fitWidth="197.0" layoutX="100.0" layoutY="150.0" onMouseClicked="#use_ch" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@Graphical_Assets/Personaggi/CarteTOT_front.jpg" />
+            </image>
+         </ImageView>
+         <ImageView fx:id="ch2" fitHeight="299.0" fitWidth="197.0" layoutX="764.0" layoutY="150.0" onMouseClicked="#use_ch" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@Graphical_Assets/Personaggi/CarteTOT_front11.jpg" />
+            </image></ImageView>
+         <ImageView fx:id="ch1" fitHeight="299.0" fitWidth="197.0" layoutX="441.0" layoutY="150.0" onMouseClicked="#use_ch" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@Graphical_Assets/Personaggi/CarteTOT_front12.jpg" />
+            </image></ImageView>
+         <Button mnemonicParsing="false" onAction="#go_to_island" prefHeight="70.0" prefWidth="119.0" snapToPixel="false" style="-fx-background-color: orange; -fx-background-radius: 100;" text="Isole" textFill="#080808">
+            <font>
+               <Font name="Onyx" size="36.0" />
+            </font>
+            <effect>
+               <InnerShadow height="65.0" radius="33.0" width="69.0" />
+            </effect>
+         </Button>
+         <Button layoutX="961.0" mnemonicParsing="false" onAction="#show_boards" prefHeight="70.0" prefWidth="119.0" snapToPixel="false" style="-fx-background-color: orange; -fx-background-radius: 100;" text="Sale" textFill="#080808">
+            <font>
+               <Font name="Onyx" size="36.0" />
+            </font>
+            <effect>
+               <InnerShadow height="65.0" radius="33.0" width="69.0" />
+            </effect>
+         </Button>
+      </children>
+   </Pane>
 </AnchorPane>

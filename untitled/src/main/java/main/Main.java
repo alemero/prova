@@ -17,7 +17,8 @@ public class Main extends Application {
         Player p=new Player("ale", Colors.BLACK,8, Wizards.WIZARD1,false);
         Player p1=new Player("antonio", Colors.WHITE,8, Wizards.WIZARD2,false);
         Player p2=new Player("luigi", Colors.GREY,8, Wizards.WIZARD3,false);
-        Match m=new Match(p,p1,p2);
+        Expert_Match m=new Expert_Match(p,p1,p2);
+        m.setCard();
         try {
             m.getCloud()[0].importStudents();
             m.getCloud()[1].importStudents();
@@ -40,13 +41,7 @@ public class Main extends Application {
                 e.printStackTrace();
             }
         }
-        for (int i = 0; i < 9; i++) {
-            try {
-                p.getBoard().placeStudent(p.getBoard().getEntrance().get(0));
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
+
 
         MatchController.setme(p);
         MatchController.setmatch(m);
@@ -63,7 +58,7 @@ public class Main extends Application {
         Thread thread=new Thread((MatchController)fxmlLoader.getController());
         thread.setDaemon(true);
         thread.start();
-        Thread th=new Thread(new Runnable() {
+        /*Thread th=new Thread(new Runnable() {
             @Override
             public void run() {
                 synchronized (this) {
@@ -79,12 +74,23 @@ public class Main extends Application {
                     MatchController.getMatch().getLands().get(1).changeTower(temp);
                     MatchController.getMatch().getLands().get(0).changeTower(temp);
                     MatchController.getMatch().uniteLandBefore(1);
+                    MatchController.getMatch().moveMotherNature(3);
+                    MatchController.getMatch().moveMotherNature(5);
+                    MatchController.getMatch().moveMotherNature(5);
+                    p.draw(p.getDeck().get(0));
+                    p.getBoard().removeTower();
+                    for (Type_Student e:Type_Student.values()) {
+                        m.checkProfessor(e);
+                    }
+                    synchronized (fxmlLoader.getController()) {
+                        fxmlLoader.getController().notifyAll();
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
         });
-        th.start();
+        th.start();*/
     }   
 
     public static void main(String[] args) {

@@ -3,7 +3,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.MainController">
    <children>
@@ -20,76 +19,5 @@
          <Button fx:id="joinGame" layoutX="143.0" layoutY="217.0" mnemonicParsing="false" onAction="#gameSelected" text="Vai" />
       </children>
    </Pane>
-   <Pane fx:id="second" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" visible="false">
-      <children>
-      <ImageView fitHeight="239.0" fitWidth="126.0" layoutX="21.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Graphical_Assets/Assistenti/retro/CarteTOT_back_1@3x.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="239.0" fitWidth="126.0" layoutX="168.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Graphical_Assets/Assistenti/retro/CarteTOT_back_11@3x.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="191.0" fitWidth="126.0" layoutX="306.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Graphical_Assets/Assistenti/retro/CarteTOT_back_21@3x.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="191.0" fitWidth="126.0" layoutX="452.0" layoutY="128.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@Graphical_Assets/Assistenti/retro/CarteTOT_back_31@3x.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="231.0" layoutY="45.0" prefHeight="49.0" prefWidth="137.0" text="Scegli un mago">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Button fx:id="wizard1" layoutX="58.0" layoutY="338.0" managed="true" mnemonicParsing="false" onAction="#chooseWizard" text="mago 1" visible="true" />
-      <Button fx:id="wizard2" layoutX="205.0" layoutY="338.0" managed="true" mnemonicParsing="false" onAction="#chooseWizard" text="mago 2" visible="true" />
-      <Button fx:id="wizard3" layoutX="343.0" layoutY="338.0" managed="true" mnemonicParsing="false" onAction="#chooseWizard" text="mago 3" visible="true" />
-      <Button fx:id="wizard4" layoutX="489.0" layoutY="338.0" managed="true" mnemonicParsing="false" onAction="#chooseWizard" text="mago 4" visible="true" />
-      </children>
-   </Pane>
-      <Pane fx:id="third" prefHeight="400.0" prefWidth="600.0" visible="false">
-         <children>
-            <Label layoutX="202.0" layoutY="49.0" prefHeight="35.0" prefWidth="195.0" text="scegli il tipo di partita">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <ChoiceBox fx:id="playernum" layoutX="225.0" layoutY="143.0" prefWidth="150.0" />
-            <Label layoutX="246.0" layoutY="107.0" text="numero giocatori">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="225.0" layoutY="190.0" prefHeight="20.0" prefWidth="115.0">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <CheckBox fx:id="expert" layoutX="242.0" layoutY="191.0" mnemonicParsing="false" text="modalità esperto">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </CheckBox>
-            <Button fx:id="typematch" layoutX="280.0" layoutY="231.0" mnemonicParsing="false" onAction="#choosetypematch" prefHeight="26.0" prefWidth="54.0" text="ok" />
-         </children>
-      </Pane>
-      <Pane fx:id="login_page" prefHeight="400.0" prefWidth="600.0" visible="false">
-         <children>
-            <Label layoutX="256.0" layoutY="68.0" prefHeight="48.0" prefWidth="88.0" text="LOGIN" AnchorPane.bottomAnchor="284.0" AnchorPane.leftAnchor="256.0" AnchorPane.rightAnchor="256.0" AnchorPane.topAnchor="68.0">
-               <font>
-                  <Font size="29.0" />
-               </font>
-            </Label>
-            <TextField fx:id="username" layoutX="196.0" layoutY="184.0" prefHeight="31.0" prefWidth="208.0" />
-            <Button fx:id="send_username" layoutX="273.0" layoutY="264.0" mnemonicParsing="false" onAction="#username" text="Submit" />
-            <Label fx:id="result_username" layoutX="199.0" layoutY="230.0" opacity="1.0" text="" />
-         </children>
-      </Pane>
    </children>
 </AnchorPane>
